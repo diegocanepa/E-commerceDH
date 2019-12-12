@@ -188,7 +188,8 @@
     .page-section h2.section-heading {
         font-size: 40px;
         margin-top: 0;
-        margin-bottom: 15px
+        margin-bottom: 15px;
+        margin-left: 40%;
     }
 
     .page-section h3.section-subheading {
@@ -442,7 +443,7 @@
             padding: 12px 0
         }
     } */
-    /*---------------------
+/*---------------------
   Footer
 -----------------------*/
 
@@ -504,6 +505,7 @@
         color: #fff;
         font-size: 26px;
         margin-bottom: 44px;
+        text-align: center;
     }
 
     .footer-widget .single-footer-widget ul li {
@@ -513,11 +515,12 @@
         list-style: none;
         line-height: 36px;
         opacity: 0.5;
+        padding-left: 20px;
     }
 
     .social-links-warp {
         background: #222121;
-        padding: 46px 0;
+        padding: 10px 0;
     }
 
     .social-links a {
@@ -654,4 +657,10 @@
     button:hover {
         background: #78788c;
         color: #fff
+    }
+
+    /*Registro*/
+
+    .body-register{
+      background-color: #fed136;
     }
