@@ -74,16 +74,18 @@
     }
 
     .img-section {
-        width: 20%;
-        height: 30%;
+        width: 40%;
+        height: 60%;
         margin-top: 20%;
     }
 
-    .img-fluid{
-
-        height: 100%;
+    .cont-service {
+        border-radius: 100%;
+        background-color: #fed136;
+        height: 50%;
+        width: 30%;
+        margin-left: 128px;
     }
-
 
     .masthead {
         text-align: center;
@@ -291,7 +293,7 @@
         left: 0;
         width: 80px;
         height: 80px;
-        margin-left: -55px;
+        margin-left: 0;
         text-align: center;
         color: #fff;
         border: 7px solid #e9ecef;
@@ -361,7 +363,7 @@
             left: 50%;
             width: 100px;
             height: 100px;
-            margin-left: 
+            margin-left: -50px
         }
         .timeline>li .timeline-image h4 {
             font-size: 13px;
@@ -385,7 +387,7 @@
         .timeline>li .timeline-image {
             width: 150px;
             height: 150px;
-            margin-left: -95px
+            margin-left: -75px
         }
         .timeline>li .timeline-image h4 {
             font-size: 18px;
@@ -610,7 +612,7 @@
     h2 {
         margin: 10px 0;
         padding-bottom: 10px;
-        width: 200px;
+        width: 180px;
         color: #78788c;
         border-bottom: 3px solid #78788c
     }
