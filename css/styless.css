@@ -609,13 +609,13 @@
         position: relative;
     }
 
-    h2 {
+    /*h2 {
         margin: 10px 0;
         padding-bottom: 10px;
         width: 180px;
         color: #78788c;
         border-bottom: 3px solid #78788c
-    }
+    }*/
 
     input {
         width: 100%;
@@ -663,4 +663,28 @@
 
     .body-register{
       background-color: #fed136;
+    }
+
+
+
+
+
+    /* DETALLE PRODUCTOS */
+    .titulo-detalle-producto{
+      width: 100$;
+      padding-top: 100px;
+      border-bottom: solid 3px black;
+    }
+
+    .imagen-producto-detalle img{
+      padding-top: 20px;
+
+    }
+
+    .div-general-detalle-producto{
+      padding: 20px;
+    }
+
+    .items-datos-products li{
+      list-style: none;
     }
