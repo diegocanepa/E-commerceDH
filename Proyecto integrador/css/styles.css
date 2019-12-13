@@ -1,0 +1,69 @@
+#nav-li-der-log {
+    margin-left: auto;
+    padding-left: 65rem;
+}
+
+#navbar-respon {
+    padding: .5rem 3rem;
+    background-color: rgb(4, 15, 27, 0.8)!important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+.page-about-as {
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color'
+}
+
+#hero {
+    float: left;
+    position: relative;
+}
+
+#navbar-brand {
+    font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+#navbarSupportedContent {
+    text-indent: 15px;
+}
+
+#nav-li,
+.navbar-dark .navbar-brand {
+    color: #fec503;
+    padding-right: inherit;
+}
+
+.mr-auto,
+.mx-auto {
+    margin-right: 59%;
+}
+
+#carrito-compras {
+    width: 10px;
+    height: 10px;
+}
+
+#div-carrousel-img {
+    width: 100%;
+    height: auto;
+}
+
+#img-carr {
+    height: auto;
+}
+
+.img-section {
+    width: 20%;
+    height: 20%;
+    padding-top: 5rem
+}
+
+.text-carousel {
+    color: #121314;
+    font-weight: bold;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
