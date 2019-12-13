@@ -307,3 +307,35 @@
     .titulo-productos{
       padding-top: 50px;
     }
+
+    .p-relative{
+      position: relative;
+    }
+    #ajax-cart{
+      position: fixed;
+      right: 75px;
+      bottom: 50%;
+      height: 10%;
+      width: 10%;
+      font-size: 125px;
+    }
+    #ajax-cart a span{
+      font-size: 50px;
+      color: black;
+    }
+    .campos{
+      overflow: hidden;
+    }
+
+    .campo{
+      width: 30%
+      float: left;
+    }
+    .items ul{
+      overflow: hidden;
+      list-style-type: none;
+    }
+    .items ul li{
+      margin: 0 15px;
+      float: left;
+    }
