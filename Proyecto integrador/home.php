@@ -8,6 +8,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="css/styles.css" rel="stylesheet">
+        
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
         <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -87,7 +88,8 @@
 
         <!-- Servicios -->
 
-        <section class="page-section" id="services">
+        <section class="page-section-services" id="about-services">
+        <h2 id="h2-services">Nuestros servicios</h2>
             <div class="container">
                 <div class="row text-center">
                         <div class="col-md-4">
@@ -108,19 +110,79 @@
                 </div>
             </div>
         </section>
-
-        <!-- Quienes somos -->
-
-        <section class="page-about-as">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-center ">NUESTRA HISTORIA</h2>
-                        <h3 class="section-subheading text-muted">La calidad de nuestros servicios para su satisfacción es nuestro principal objetivo.</h3>
-                    </div>
+        <!-- About -->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" id="history">
+                    <h2 class="section-heading">NUESTRA HISTORIA</h2>
+                    <h3 class="section-subheading text-muted">La calidad de nuestros servicios para su satisfacción es nuestro principal objetivo.</h3>
                 </div>
             </div>
-        </section>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image">
+                                <img class="rounded-circle img-fluid" src="img/equipo-de-trabajo.jpg" alt="falta imagen">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>1980</h4>
+                                    <h4 class="subheading">Nuestros comienzos</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="rounded-circle img-fluid" src="img/Empresa-.jpg" alt="falta imagen">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>1998</h4>
+                                    <h4 class="subheading">Nace una futura empresa</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="rounded-circle img-fluid" src="img/Empresa-responsable.jpg" alt="falta imagen">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2012</h4>
+                                    <h4 class="subheading">La consolidacion</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="rounded-circle img-fluid" src="img/Foto-construir-una-gran-empresa-6.png" alt="falta imagen">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2019</h4>
+                                    <h4 class="subheading">Seguimos creciendo</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
         <footer>
             <div class="footer-top">
