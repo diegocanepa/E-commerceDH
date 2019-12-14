@@ -311,3 +311,33 @@ li {
         padding: 0 100px 20px 20px;
     }
 }
+
+
+
+
+/*PRODUCTOS*/
+.imagen-productos{
+  height: 400px;
+}
+
+
+
+/* DETALLE PRODUCTOS */
+
+.titulo-detalle-producto {
+    width: 100$;
+    padding-top: 100px;
+    border-bottom: solid 3px black;
+}
+
+.imagen-producto-detalle img {
+    padding-top: 20px;
+}
+
+.div-general-detalle-producto {
+    padding: 20px;
+}
+
+.items-datos-products li {
+    list-style: none;
+}
