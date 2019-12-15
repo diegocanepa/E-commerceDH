@@ -3,22 +3,21 @@
 <?php require_once("codigoReutilizable/productos.php"); ?>
 <html lang="en" dir="ltr">
 
-  <?php require_once("codigoReutilizable/head.php"); ?>
-
+  <?php require_once("codigoReutilizable/head.php");?>
 
   <body>
+    <?php require_once("codigoReutilizable/nav.php"); ?>
     <div class="div-general-detalle-producto">
       <!-- Navigation -->
-      <?php require_once("codigoReutilizable/nav.php"); ?>
+
       <div class="titulo-detalle-producto">
         <h3>Detalle del producto</h3>
       </div>
 
-      <?php echo $productos[$_GET["prod"]]["imagen"]; ?>
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-4 text-center imagen-producto-detalle ">
-            <img src="<?php echo $productos[$_GET["prod"]]["imagen"];  ?>" alt="Imagen">
+            <img src=<?php echo $productos[$_GET["prod"]]["imagen"];  ?> alt="Imagen">
           </div>
           <div class="col-lg-8 ">
             <p class="parrafo-detalle"><?php echo $productos[$_GET["prod"]]["Nombre"];  ?></p>

@@ -22,15 +22,15 @@
                 <div class="carousel-item">
                     <img src="img/header-p2.jpg" class="d-block w-100" id="img-carr" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5 class="text-carousel">La mejor opcion para tu bolsillo</h5>
+                        <h5 class="text-carousel">La mejor opción para tu bolsillo</h5>
                         <p class="text-carousel">Grandes planes para la mejor financiacion</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="img/header-p3.jpg" class="d-block w-100" id="img-carr" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5 class="text-carousel">¿Que estas esperando?</h5>
-                        <p class="text-carousel">Comenza a remodelar eso que tanto querias</p>
+                        <h5 class="text-carousel">¿Qué estás esperando?</h5>
+                        <p class="text-carousel">Comenzá a remodelar eso que tanto querías</p>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="cont-service"> <img class="img-section" src="img/configuration.png" alt=""></div>
-                            <h4 class="service-heading">Insatalacion y armado</h4>
+                            <h4 class="service-heading">Insatalación y armado</h4>
                             <p class="text-muted">¡Nosotros lo hacemos por vos!<br/>¿Conocés todos nuestros servicios de instalación?</p>
                         </div>
                 </div>

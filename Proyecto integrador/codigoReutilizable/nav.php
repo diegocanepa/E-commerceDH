@@ -9,10 +9,10 @@
                 <a class="nav-link" id="nav-li" href="productos.php">Productos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="nav-li" href="#about-services">Nosotros</a>
+                <a class="nav-link" id="nav-li" href="home.php#about-services">Nosotros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="nav-li" href="#footer-section">Contactanos</a>
+                <a class="nav-link" id="nav-li" href="home.php#footer-section">Contactanos</a>
             </li>
             <!-- <li><a class="nav-link" id="carrito-compras"><img src="resources/carrito-compras.png" alt=""></a></li> -->
         </ul>
@@ -22,7 +22,7 @@
                     <a class="nav-link" id="nav-li" href="form-login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="nav-li" href="#">Registrarse</a>
+                    <a class="nav-link" id="nav-li" href="form-register.php">Registrarse</a>
                 </li>
             </div>
         </div>

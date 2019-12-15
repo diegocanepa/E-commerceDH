@@ -589,6 +589,7 @@ li {
 .btn-canc-reg {
     padding-top: 8%;
     margin-right: 1%;
+    align-items: center;
 }
 
 .input-name,
@@ -616,4 +617,12 @@ li {
 .lbl-register-repass {
     margin-bottom: 0%;
     padding-top: 5%;
+}
+
+@media only screen and (max-width: 767px){
+ .div-btn-reg,
+ .div-btn-cancel{
+    font-size: 10px;
+    width: 50%;
+  }
 }

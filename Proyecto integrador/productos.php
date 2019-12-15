@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
-require_once("codigoReutilizable/productos.php")
-
+require_once("codigoReutilizable/productos.php");
 
  ?>
 <html lang="en" dir="ltr">
@@ -10,7 +9,7 @@ require_once("codigoReutilizable/productos.php")
     <?php require_once("codigoReutilizable/nav.php") ?>
       <section class="jumbotron text-center">
           <div class="container">
-              <h1>Porductos</h1>
+              <h1>Productos</h1>
               <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
           </div>
       </section>
@@ -26,8 +25,8 @@ require_once("codigoReutilizable/productos.php")
                   <p class="card-text"><?php echo $value["descripcion"]; ?></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <a href="detalleProducto.php/?prod=<?php echo $key; ?>" ><button type="button" class="btn btn-sm btn-outline-secondary">Ver mas</button></a>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Agregar al Carrito</button>
+                      <a href="detalleProducto.php?prod=<?php echo $key; ?>" ><button type="button" class="btn btn-sm btn-outline-secondary">Ver mas</button></a>
+                      <button type="button" class="btn btn-sm btn-outline-secondary"> Agregar al Carrito</button>
                     </div>
                     <small class="text-muted"><?php echo "$".$value["precio"]; ?></small>
                   </div>
