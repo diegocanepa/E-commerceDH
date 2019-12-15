@@ -26,5 +26,13 @@
                 </li>
             </div>
         </div>
+        <div class="carril">
+          <div class="carro">
+            <a href="carrito.php">
+              <img src="img/shopping-cart.png" alt="">
+            </a>
+          </div>
+        </div>
+
     </div>
 </nav>

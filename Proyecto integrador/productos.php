@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <?php
 require_once("codigoReutilizable/productos.php");
-
  ?>
+
+ <!-- Valores de prueba-->
+ <?php session_start();
+ $array = [1, 2, 3];
+ $_SESSION["idProductos"] = $array;?>
+ <!--fin valores de prueba-->
+
 <html lang="en" dir="ltr">
   <?php require_once("codigoReutilizable/head.php") ?>
   <body>
@@ -36,15 +42,6 @@ require_once("codigoReutilizable/productos.php");
             <?php endforeach; ?>
           </div>
       </div>
-
-
-
-
-
-
-
-
-
 
     <?php require_once("codigoReutilizable/footer.php") ?>
   </body>

@@ -626,3 +626,34 @@ li {
     width: 50%;
   }
 }
+.carril{
+  position: relative;
+}
+
+.carro a img{
+  position: fixed;
+  height: 4%;
+  width: 3%;
+  top: 10%;
+  right: 1%;
+  border-radius: 60%;
+  background-color: #fed136;
+}
+
+/* Carro */
+
+.titulo-carro {
+    width: 100%;
+    padding-top: 100px;
+}
+
+.formulario{
+  width: 100%;
+}
+table{
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
