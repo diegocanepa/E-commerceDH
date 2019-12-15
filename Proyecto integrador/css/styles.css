@@ -12,7 +12,8 @@
 .page-about-as,
 #h2-services,
 .subtitulo-login,
-.texto-login {
+.texto-login,
+.body-register {
     font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color'
 }
 
@@ -343,7 +344,7 @@ li {
 /* DETALLE PRODUCTOS */
 
 .titulo-detalle-producto {
-    width: 100$;
+    width: 100%;
     padding-top: 100px;
     border-bottom: solid 3px black;
 }
@@ -363,7 +364,8 @@ li {
 
 /* FORMULARIO DE LOGUEO */
 
-.body-login {
+.body-login,
+.body-register {
     background: #fed136;
     font-family: 'Inter UI', sans-serif;
     margin: 0;
@@ -545,4 +547,73 @@ li {
 
 #submit-login:active {
     color: black;
+}
+
+
+/* FORMULARIO DE REGISTRO */
+
+.form-register {
+    width: 340px;
+    height: 465px;
+    background: #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    margin: calc(50vh - 220px) auto;
+    padding: 20px 30px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+
+.cancel-btn,
+.register-btn {
+    color: #000000;
+    transition: color 300ms;
+    font-size: 18px;
+}
+
+.register-btn {
+    margin-left: 25%;
+}
+
+.cancel-btn {
+    margin-right: 25%;
+}
+
+.div-btn-reg,
+.div-btn-cancel {
+    text-align: -webkit-center;
+}
+
+.btn-canc-reg {
+    padding-top: 8%;
+    margin-right: 1%;
+}
+
+.input-name,
+.input-mail,
+.input-pass,
+.input-repass {
+    width: 103%;
+    line-height: inherit;
+    padding-bottom: 1%;
+    margin-top: 1%;
+}
+
+.campos-reg {
+    text-align: -webkit-left;
+    margin-top: 10%;
+}
+
+.h1-registro {
+    text-align: center;
+}
+
+.lbl-register-nom,
+.lbl-register-email,
+.lbl-register-pass,
+.lbl-register-repass {
+    margin-bottom: 0%;
+    padding-top: 5%;
 }
