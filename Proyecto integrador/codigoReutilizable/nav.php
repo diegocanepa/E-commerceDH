@@ -14,7 +14,6 @@
             <li class="nav-item">
                 <a class="nav-link" id="nav-li" href="home.php#footer-section">Contactanos</a>
             </li>
-            <!-- <li><a class="nav-link" id="carrito-compras"><img src="resources/carrito-compras.png" alt=""></a></li> -->
         </ul>
         <div class="form-inline my-2 my-lg-0" id="end">
             <div class="menu-derecha" id="menu-derecha">
@@ -24,15 +23,10 @@
                 <li class="nav-item">
                     <a class="nav-link" id="nav-li" href="form-register.php">Registrarse</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-li-carrito"><img id="carrito-compras-img" src="resources/carrito-compras2.png" alt=""></a>
+                </li>
             </div>
         </div>
-        <div class="carril">
-          <div class="carro">
-            <a href="carrito.php">
-              <img src="img/shopping-cart.png" alt="">
-            </a>
-          </div>
-        </div>
-
     </div>
 </nav>

@@ -13,7 +13,8 @@
 #h2-services,
 .subtitulo-login,
 .texto-login,
-.body-register {
+.body-register,
+.mi-perfil {
     font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color'
 }
 
@@ -30,19 +31,18 @@
 .navbar-dark .navbar-brand {
     color: #fec503;
     padding-right: inherit;
+    padding-bottom: 0%;
+    padding-left: 0.5rem;
 }
 
 .menu-derecha {
     display: flex;
-    flex-direction: row;
 }
 
-#end {
-    justify-content: flex-end;
-}
-
-#end #menu-derecha {
-    align-content: flex-end;
+#nav-li-carrito {
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-left: 0.5rem;
 }
 
 .mr-auto,
@@ -87,7 +87,8 @@
 
 /* <!-- Seccion linea de vida --> */
 
-.page-section {
+.page-section,
+.mi-perfil {
     padding: 60px 0;
     background-color: #fed136;
 }
@@ -277,7 +278,6 @@ li {
         left: 50%;
         width: 100px;
         height: 100px;
-        margin-left:
     }
     .timeline>li .timeline-image h4 {
         font-size: 13px;
@@ -619,26 +619,28 @@ li {
     padding-top: 5%;
 }
 
-@media only screen and (max-width: 767px){
- .div-btn-reg,
- .div-btn-cancel{
-    font-size: 10px;
-    width: 50%;
-  }
-}
-.carril{
-  position: relative;
+@media only screen and (max-width: 767px) {
+    .div-btn-reg,
+    .div-btn-cancel {
+        font-size: 10px;
+        width: 50%;
+    }
 }
 
-.carro a img{
-  position: fixed;
-  height: 4%;
-  width: 3%;
-  top: 10%;
-  right: 1%;
-  border-radius: 60%;
-  background-color: #fed136;
+.carril {
+    position: relative;
 }
+
+.carro a img {
+    position: fixed;
+    height: 4%;
+    width: 3%;
+    top: 10%;
+    right: 1%;
+    border-radius: 60%;
+    background-color: #fed136;
+}
+
 
 /* Carro */
 
@@ -647,13 +649,35 @@ li {
     padding-top: 100px;
 }
 
-.formulario{
-  width: 100%;
-}
-table{
-  width: 100%;
+.formulario {
+    width: 100%;
 }
 
-table, th, td {
-  border: 1px solid black;
+table {
+    width: 100%;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+
+/* PERFIL DE USUARIO */
+
+.page-header-perfil {
+    text-align: center;
+}
+
+#content-perfil {
+    padding-top: 0%;
+}
+
+#customer-form {
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    padding: 5% 4rem;
+    box-sizing: border-box;
 }
