@@ -4,7 +4,6 @@
     <body>
         <!-- Navigation -->
         <?php require_once("codigoReutilizable/nav.php") ?>
-
         <!-- Carousel -->
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -144,7 +143,7 @@
         </div>
     </section>
 
-        <footer>
+        <footer id="footer-section">
             <div class="footer-top">
                 <div class="container">
                     <div class="row">
