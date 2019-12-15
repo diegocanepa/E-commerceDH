@@ -19,7 +19,7 @@
         <div class="form-inline my-2 my-lg-0" id="end">
             <div class="menu-derecha" id="menu-derecha">
                 <li class="nav-item">
-                    <a class="nav-link" id="nav-li" href="#">Login</a>
+                    <a class="nav-link" id="nav-li" href="form-login.php">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="nav-li" href="#">Registrarse</a>
