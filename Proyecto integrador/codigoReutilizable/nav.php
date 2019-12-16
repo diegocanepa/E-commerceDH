@@ -24,7 +24,7 @@
                     <a class="nav-link" id="nav-li" href="form-register.php">Registrarse</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="nav-li-carrito"><img id="carrito-compras-img" src="resources/carrito-compras2.png" alt=""></a>
+                    <a class="nav-link" id="nav-li-carrito" href="carrito.php"><img id="carrito-compras-img" src="resources/carrito-compras2.png" alt=""></a>
                 </li>
             </div>
         </div>

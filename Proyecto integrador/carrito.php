@@ -1,9 +1,18 @@
-<?php
- ?>
 
 <?php session_start();
   $total = 0;
   $carro = $_SESSION["idProductos"];
+
+  if ($_POST) {
+    if ($_POST["pagar"]) {
+      echo "Quiere pagar";
+      header('Location: exito.php');
+    }else {
+      if ($_POST["cancelar"]) {
+        header('Location: home.php');
+      }
+    }
+  }
 ?>
 <?php require_once("codigoReutilizable/productos.php"); ?>
 <!DOCTYPE html>
@@ -15,49 +24,62 @@
 
     <div class="container">
       <div class="row">
-        <div class="titulo-carro">
-          <h3>Productos en el carrito</h3>
+        <div class="jumbotron text-center titulo-carro">
+            <h1>Productos del carro</h1>
         </div>
-        <form class="formulario" action="exito.php" method="post">
+        <form class="formulario" action="carrito.php" method="post">
           <?php if(strlen($carro[0]) != 0):?>
-            <table style="width:100%">
-            <tr class="title">
-              <th>Foto</th>
-              <th>Producto</th>
-              <th>Precio</th>
-            </tr>
-            <?php foreach($carro as $item): ?>
-            <tr>
-              <th><?php echo $productos[$item]["imagen"];?></th>
-              <th><?php echo $productos[$item]["Nombre"];?></th>
-              <th><?php echo $productos[$item]["precio"];?></th>
-              <?php $total = $total + $productos[$item]["precio"]?>
-            </tr>
-            <?php endforeach; ?>
-            <tr>
-              <th>Total</th>
-              <th></th>
-              <th><?php echo "$total"; ?></th>
-            </tr>
-            </table>
-          <?php else: ?>
-            <?php echo "No hay ningun articulo en el carrito";?>
-          <?php endif;?>
-          <div class="titulo-pago col-lg-12">
-            <h4>Seleccione el metodo de pago</h4>
-          </div>
+            <table class="egt" style="width:100%">
+              <thead>
+                <tr class="title">
+                  <th scope="row" colspan="2">Producto</th>
+                  <th scope="row">Precio</th>
+                </tr>
+              </thead>
+              <?php foreach($carro as $item): ?>
+                <tbody>
+                  <tr>
+                    <td><img src="<?php echo $productos[$item]["imagen"];?>" alt=""></td>
+                    <td><?php echo $productos[$item]["Nombre"];?></td>
+                    <td><?php echo "$" . $productos[$item]["precio"];?></td>
+                    <?php $total = $total + $productos[$item]["precio"]?>
+                  </tr>
+                </tbody>
+              <?php endforeach; ?>
+              <tfoot>
+                <tr>
+                  <th>Total</th>
+                  <th></th>
+                  <td><?php echo "$total"; ?></td>
+                </tr>
+              </tfoot>
 
-          <div>
-            <input type="radio" name="metodo-pago" value="p">Paypal
+            </table>
             <br>
-            <input type="radio" name="metodo-pago" value="tc" checked>Tarjeta de crédito
-            <br>
-            <input type="radio" name="metodo-pago" value="td">Tarjeta de débito
-          </div>
-          <div class="">
-          <input type="submit" name="" value="Efectuar pago">
-          <button type="button" name="button">Cancelar</button>
-          </div>
+            <div class="jumbotron text-center titulo-carro titulo-pago">
+                <h1>Seleccione el metodo de pago</h1>
+            </div>
+            <div class="caja-pago align-item-center">
+              <div class="col-md-4 radios">
+                <input type="radio" name="metodo-pago" value="p">Paypal
+                <br>
+                <input type="radio" name="metodo-pago" value="tc" checked>Tarjeta de crédito
+                <br>
+                <input type="radio" name="metodo-pago" value="td">Tarjeta de débito
+              </div>
+
+              <div class="col-md-4 btn-group">
+                <input type="submit" name="pagar" value="Efectuar pago">
+                <input type="submit" name="cancelar" value="Cancelar">
+              </div>
+            </div>
+
+          <?php else: ?>
+            <div class="jumbotron text-center">
+                <h2>No hay ningun articulo en el carrito</h2>
+            </div>
+          <?php endif;?>
+
         </form>
       </div>
     </div>

@@ -3,6 +3,10 @@
   <?php require_once("codigoReutilizable/head.php") ?>
   <body>
     <?php require_once("codigoReutilizable/nav.php") ?>
-    <h1>¡Pago realizado con éxito!</h1>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>¡Pago realizado con éxito!</h1>
+        </div>
+    </section>
   </body>
 </html>
