@@ -15,20 +15,24 @@
       </div>
 
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-4 text-center imagen-producto-detalle ">
-            <img src=<?php echo $productos[$_GET["prod"]]["imagen"];  ?> alt="Imagen">
+
+        <form class="" action="productos.php" method="post">
+          <div class="row">
+            <div class="col-lg-4 text-center imagen-producto-detalle ">
+              <img src=<?php echo $productos[$_GET["prod"]]["imagen"];  ?> alt="Imagen">
+            </div>
+            <div class="col-lg-8 ">
+              <p class="parrafo-detalle"><?php echo $productos[$_GET["prod"]]["Nombre"];  ?></p>
+              <h4><?php echo $productos[$_GET["prod"]]["Nombre"]; ?></h4>
+              <h1>$ <?php echo $productos[$_GET["prod"]]["precio"];  ?></h1>
+              <input class="btn btn-primary btn-lg" type="submit" name="<?php echo $_GET["prod"]; ?>" value="Agregar al Carrito"><img src="img/icono-carrito.png" alt="">
+              <p>El Precio Internet corresponde al precio para el pago en 1 (una) cuota con tarjeta de crédito.
+                Precios válidos para venta web y telefónica, no aplican al local de venta. Precios validos solamenta para
+                venta web o telefonica. NO PARA VENTA EN EL LOCAL</p>
+            </div>
           </div>
-          <div class="col-lg-8 ">
-            <p class="parrafo-detalle"><?php echo $productos[$_GET["prod"]]["Nombre"];  ?></p>
-            <h4><?php echo $productos[$_GET["prod"]]["Nombre"]; ?></h4>
-            <h1>$ <?php echo $productos[$_GET["prod"]]["precio"];  ?></h1>
-            <button type="button" class="btn btn-primary btn-lg"><img src="img/icono-carrito.png" alt="">Agregar al carrito</button>
-            <p>El Precio Internet corresponde al precio para el pago en 1 (una) cuota con tarjeta de crédito.
-              Precios válidos para venta web y telefónica, no aplican al local de venta. Precios validos solamenta para
-              venta web o telefonica. NO PARA VENTA EN EL LOCAL</p>
-          </div>
-      </div>
+        </form>
+
       </div>
       <br>
       <br>

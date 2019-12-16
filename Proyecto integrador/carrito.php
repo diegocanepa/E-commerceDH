@@ -5,10 +5,11 @@
 
   if ($_POST) {
     if ($_POST["pagar"]) {
-      echo "Quiere pagar";
+      session_destroy();
       header('Location: exito.php');
     }else {
       if ($_POST["cancelar"]) {
+        session_destroy(); 
         header('Location: home.php');
       }
     }

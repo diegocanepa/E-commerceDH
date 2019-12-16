@@ -3,11 +3,26 @@
 require_once("codigoReutilizable/productos.php");
  ?>
 
- <!-- Valores de prueba-->
  <?php session_start();
- $array = [1, 2, 3];
- $_SESSION["idProductos"] = $array;?>
- <!--fin valores de prueba-->
+ // Inicializo el array vacio
+ $array = [];
+
+ if ($_POST) {
+   //Si existe una sesion previa obtengo todos los valores de id
+   if (isset($_SESSION["idProductos"])) {
+     foreach ($_SESSION["idProductos"] as $indice => $valor) {
+       $array[] = $valor;
+     }
+   }
+
+   //Agrego al arreglo el numerode id que se envia por post
+   foreach ($_POST as $key => $value) {
+     $array[] = $key;
+   }
+
+   $_SESSION["idProductos"] = $array;
+ }
+ ?>
 
 <html lang="en" dir="ltr">
   <?php require_once("codigoReutilizable/head.php") ?>
@@ -21,7 +36,9 @@ require_once("codigoReutilizable/productos.php");
       </section>
 
       <div class="container">
+        <form class="form-agrupa" action="productos.php" method="post">
           <div class="row">
+
             <?php foreach ($productos as $key => $value): ?>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
@@ -32,7 +49,7 @@ require_once("codigoReutilizable/productos.php");
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <a href="detalleProducto.php?prod=<?php echo $key; ?>" ><button type="button" class="btn btn-sm btn-outline-secondary">Ver mas</button></a>
-                      <button type="button" class="btn btn-sm btn-outline-secondary"> Agregar al Carrito</button>
+                      <input class="btn btn-sm btn-outline-secondary" type="submit" name="<?php echo $key; ?>" value="Agregar al Carrito">
                     </div>
                     <small class="text-muted"><?php echo "$".$value["precio"]; ?></small>
                   </div>
@@ -41,6 +58,8 @@ require_once("codigoReutilizable/productos.php");
             </div>
             <?php endforeach; ?>
           </div>
+        </form>
+
       </div>
 
     <?php require_once("codigoReutilizable/footer.php") ?>
