@@ -22,7 +22,7 @@
                                     <a class="tag-footer" href="">Novedades</a>
                                 </li>
                                 <li>
-                                    <a class="tag-footer" href="">Marcas</a>
+                                    <a class="tag-footer" href="preguntas-frecuentes.php">Preguntas Precuentes</a>
                                 </li>
                             </ul>
                         </div>

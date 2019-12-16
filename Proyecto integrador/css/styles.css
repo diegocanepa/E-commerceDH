@@ -380,8 +380,15 @@ li {
     border-bottom: solid 3px black;
 }
 
-.imagen-producto-detalle img {
-    padding-top: 20px;
+.contenedor-datos-producto{
+  padding: 25px;
+  padding-left: 0px;
+}
+
+.imagen-producto-detalle{
+
+    width: 100%;
+    height: 100%:
 }
 
 .div-general-detalle-producto {
@@ -777,4 +784,41 @@ td {
 
 .parr-footer {
     font-size: 20px;
+}
+
+
+
+
+/* PREGUNTAS FRECUENTES */
+
+
+.collapsible-link {
+    width: 100%;
+    position: relative;
+    text-align: left;
+}
+
+.collapsible-link::before {
+    content: '\f107';
+    position: absolute;
+    top: 30%;
+    right: 0.8rem;
+    transform: translateY(-50%);
+    display: block;
+    font-family: 'FontAwesome';
+    font-size: 1.1rem;
+    bottom: 33%
+}
+
+.collapsible-link[aria-expanded='true']::before {
+    content: '\f106';
+}
+
+.body-preg {
+    background: #fed136;
+    min-height: 100vh;
+}
+
+.contenedor-preguntas{
+  padding-bottom: 30px;
 }
