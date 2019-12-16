@@ -15,7 +15,10 @@
 .texto-login,
 .body-register,
 .mi-perfil,
-#footer-section {
+#footer-section,
+.titulo-faq,
+#section-faq,
+#body-faq {
     font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color'
 }
 
@@ -396,7 +399,8 @@ li {
 /* FORMULARIO DE LOGUEO */
 
 #body-login,
-#body-register {
+#body-register,
+#body-faq {
     background: #fed136;
     font-family: 'Inter UI', sans-serif;
     margin: 0;
@@ -777,4 +781,21 @@ td {
 
 .parr-footer {
     font-size: 20px;
+}
+
+
+/* SECCION FAQ */
+
+#section-faq {
+    padding-top: 6%;
+    padding-bottom: 0%;
+}
+
+.titulo-faq {
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+#accordionExample {
+    height: 100%;
 }

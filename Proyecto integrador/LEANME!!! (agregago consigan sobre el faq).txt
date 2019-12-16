@@ -10,6 +10,9 @@
 
 --Formulario de registro--
 
+--FAQ--
+
+estaria bueno hacer como en esta pagina https://www.tiendanube.com/preguntas-frecuentes
 
 --Carrito de compras--
 
