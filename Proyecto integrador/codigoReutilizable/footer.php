@@ -44,8 +44,8 @@
                             <p class="parr-footer">Redes Sociales</p>
                             <hr style="border-color:white">
                             <ul class="footer-list">
-                                <li><a class="tag-footer" href=""><img class="img-footer" src="resources/facebook.png" alt=""> Seguinos en Facebook</a></li>
-                                <li><a class="tag-footer" href=""><img class="img-footer" src="resources/instagram.png" alt=""> Seguinos en Instagram</a></li>
+                                <li><a class="tag-footer" href="https://facebook.com"><img class="img-footer" src="resources/facebook.png" alt=""> Seguinos en Facebook</a></li>
+                                <li><a class="tag-footer" href="https://instagram.com"><img class="img-footer" src="resources/instagram.png" alt=""> Seguinos en Instagram</a></li>
                             </ul>
                         </div>
                     </div>
