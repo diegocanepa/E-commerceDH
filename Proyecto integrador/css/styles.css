@@ -383,8 +383,14 @@ li {
     border-bottom: solid 3px black;
 }
 
-.imagen-producto-detalle img {
-    padding-top: 20px;
+.contenedor-datos-producto {
+    padding: 25px;
+    padding-left: 0px;
+}
+
+.imagen-producto-detalle {
+    width: 100%;
+    height: 100%;
 }
 
 .div-general-detalle-producto {
