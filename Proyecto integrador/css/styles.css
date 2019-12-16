@@ -14,12 +14,14 @@
 .subtitulo-login,
 .texto-login,
 .body-register,
-.mi-perfil {
+.mi-perfil,
+#footer-section {
     font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color'
 }
 
 #navbar-brand,
-.titulo-login {
+.titulo-login,
+.li-beaver-buil {
     font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
 }
 
@@ -156,10 +158,10 @@ li {
 .timeline:before {
     position: absolute;
     top: 0;
-    bottom: 90px;
+    bottom: 190px;
     left: 40px;
     width: 2px;
-    margin-left: -1.5px;
+    margin-left: -0.5px;
     content: '';
     background-color: #e9ecef
 }
@@ -289,6 +291,16 @@ li {
         padding: 0 30px 20px 20px;
         text-align: left
     }
+    .timeline:before {
+        position: absolute;
+        top: 0;
+        bottom: 250px;
+        left: 40px;
+        width: 2px;
+        margin-left: 334px;
+        content: '';
+        background-color: #e9ecef
+    }
 }
 
 @media (min-width:992px) {
@@ -311,6 +323,15 @@ li {
     .timeline>li.timeline-inverted>.timeline-panel {
         padding: 0 20px 20px
     }
+    .timeline:before {
+        position: absolute;
+        top: 0;
+        bottom: 185px;
+        width: 2px;
+        margin-left: 438px;
+        content: '';
+        background-color: #e9ecef
+    }
 }
 
 @media (min-width:1200px) {
@@ -330,6 +351,16 @@ li {
     }
     .timeline>li.timeline-inverted>.timeline-panel {
         padding: 0 100px 20px 20px;
+    }
+    .timeline:before {
+        position: absolute;
+        top: 0;
+        bottom: 185px;
+        left: 40px;
+        width: 2px;
+        margin-left: 33rem;
+        content: '';
+        background-color: #e9ecef
     }
 }
 
@@ -364,22 +395,26 @@ li {
 
 /* FORMULARIO DE LOGUEO */
 
-.body-login,
-.body-register {
+#body-login,
+#body-register {
     background: #fed136;
     font-family: 'Inter UI', sans-serif;
     margin: 0;
-    padding: 20px;
+}
+
+.container-register {
+    margin-top: -3rem;
 }
 
 .page-login {
     background: #fed336c2;
     display: flex;
     flex-direction: column;
-    height: calc(100% - 40px);
-    position: absolute;
+    padding-top: 10rem;
+    position: relative;
     place-content: center;
     width: calc(100% - 40px);
+    padding-bottom: 10rem;
 }
 
 .box-email {
@@ -401,8 +436,8 @@ li {
 @media (max-width: 767px) {
     .page-login {
         margin-bottom: 20px;
-        padding-bottom: 20px;
-        margin-top: 10%;
+        padding-bottom: 8rem;
+        margin-top: -10%;
     }
 }
 
@@ -646,7 +681,6 @@ li {
 
 .titulo-carro {
     width: 100%;
-
 }
 
 .formulario {
@@ -664,24 +698,30 @@ td {
     border: 1px solid rgba(0, 0, 0, 0.3);
     text-align: center;
 }
-th{
-  background: rgba(61, 61, 21, 0.3);
-  align-content: center;
+
+th {
+    background: rgba(61, 61, 21, 0.3);
+    align-content: center;
 }
-td{
-  background: rgba(218, 218, 196, 0.3);
+
+td {
+    background: rgba(218, 218, 196, 0.3);
 }
-.caja-pago{
-  overflow: hidden;
+
+.caja-pago {
+    overflow: hidden;
 }
-.radios{
-  float: left;
+
+.radios {
+    float: left;
 }
-.envios-form{
-  float: right;
-  position:absolute;
-  right: 10%;
+
+.envios-form {
+    float: right;
+    position: absolute;
+    right: 10%;
 }
+
 
 /* PERFIL DE USUARIO */
 
@@ -699,4 +739,42 @@ td{
     box-shadow: 0 0 40px -10px #000;
     padding: 5% 4rem;
     box-sizing: border-box;
+}
+
+
+/* SECCION FOOTER */
+
+#footer-top,
+#footer-section {
+    background-color: black;
+    color: white;
+    padding-top: 1rem;
+}
+
+.footer-list {
+    padding-left: 0%;
+    padding-top: 0%;
+    line-height: 2rem;
+}
+
+.tag-footer {
+    text-decoration: none;
+    color: white;
+}
+
+.tag-footer:hover {
+    text-decoration: none;
+    color: #fed136
+}
+
+.li-beaver-buil {
+    padding-bottom: 5%;
+}
+
+.img-footer {
+    padding-right: 3%;
+}
+
+.parr-footer {
+    font-size: 20px;
 }

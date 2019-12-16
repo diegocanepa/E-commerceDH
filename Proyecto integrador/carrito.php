@@ -21,7 +21,7 @@
 
   <?php require_once("codigoReutilizable/head.php");?>
   <body>
-    <?php require_once("codigoReutilizable/nav.php"); ?>
+  <?php require_once("codigoReutilizable/nav.php"); ?>
 
     <div class="container">
       <div class="row">

@@ -6,7 +6,7 @@
         <!-- Navigation -->
         <?php require_once("codigoReutilizable/nav.php") ?>
 
-<body class="body-login">
+<body id="body-login">
     <div class="page-login">
         <div class="container-login">
             <div class="left-login">
@@ -47,6 +47,7 @@
             </div>
         </div>
     </div>
+    <?php include_once("codigoReutilizable/footer.php") ?>
 </body>
 
 </html>

@@ -1,75 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php require_once("codigoReutilizable/head.php") ?>
-    <body>
-        <!-- Navigation -->
-        <?php require_once("codigoReutilizable/nav.php") ?>
-        <!-- Carousel -->
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active" id="div-carrousel-img">
-                    <img src="img/header-p1.jpg" class="d-block w-100" id="img-carr" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="text-carousel">Las mejores oportunidades</h5>
-                        <p class="text-carousel">Precios tan esperados como el verano</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="img/header-p2.jpg" class="d-block w-100" id="img-carr" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="text-carousel">La mejor opción para tu bolsillo</h5>
-                        <p class="text-carousel">Grandes planes para la mejor financiacion</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="img/header-p3.jpg" class="d-block w-100" id="img-carr" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="text-carousel">¿Qué estás esperando?</h5>
-                        <p class="text-carousel">Comenzá a remodelar eso que tanto querías</p>
-                    </div>
+<?php require_once("codigoReutilizable/head.php") ?>
+
+<body>
+    <!-- Navigation -->
+    <?php require_once("codigoReutilizable/nav.php") ?>
+    <!-- Carousel -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" id="div-carrousel-img">
+                <img src="img/header-p1.jpg" class="d-block w-100" id="img-carr" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="text-carousel">Las mejores oportunidades</h5>
+                    <p class="text-carousel">Precios tan esperados como el verano</p>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            <div class="carousel-item">
+                <img src="img/header-p2.jpg" class="d-block w-100" id="img-carr" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="text-carousel">La mejor opción para tu bolsillo</h5>
+                    <p class="text-carousel">Grandes planes para la mejor financiacion</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/header-p3.jpg" class="d-block w-100" id="img-carr" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="text-carousel">¿Qué estás esperando?</h5>
+                    <p class="text-carousel">Comenzá a remodelar eso que tanto querías</p>
+                </div>
+            </div>
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 
 
-        <!-- Servicios -->
+    <!-- Servicios -->
 
-        <section class="page-section-services" id="about-services">
+    <section class="page-section-services" id="about-services">
         <h2 id="h2-services">Nuestros servicios</h2>
-            <div class="container">
-                <div class="row text-center">
-                        <div class="col-md-4">
-                            <div class="cont-service"><img class="img-section" src="img/shopping-cart.png" alt=""></div>
-                            <h4 class="service-heading">E-Commerce</h4>
-                            <p class="text-muted">Compra todo lo que necesites sin moverte de tu casa.</p>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="cont-service"><img class="img-section" src="img/logistics-delivery-truck-in-movement.png" alt=""></div>
-                            <h4 class="service-heading">Envío a domicilio</h4>
-                            <p class="text-muted">¡Hace tu pedido que nosotros te lo enviamos sin cargo!.</p>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="cont-service"> <img class="img-section" src="img/configuration.png" alt=""></div>
-                            <h4 class="service-heading">Insatalación y armado</h4>
-                            <p class="text-muted">¡Nosotros lo hacemos por vos!<br/>¿Conocés todos nuestros servicios de instalación?</p>
-                        </div>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="cont-service"><img class="img-section" src="img/shopping-cart.png" alt=""></div>
+                    <h4 class="service-heading">E-Commerce</h4>
+                    <p class="text-muted">Compra todo lo que necesites sin moverte de tu casa.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="cont-service"><img class="img-section" src="img/logistics-delivery-truck-in-movement.png" alt=""></div>
+                    <h4 class="service-heading">Envío a domicilio</h4>
+                    <p class="text-muted">¡Hace tu pedido que nosotros te lo enviamos sin cargo!.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="cont-service"> <img class="img-section" src="img/configuration.png" alt=""></div>
+                    <h4 class="service-heading">Insatalación y armado</h4>
+                    <p class="text-muted">¡Nosotros lo hacemos por vos!<br />¿Conocés todos nuestros servicios de instalación?</p>
                 </div>
             </div>
-        </section>
-        <!-- About -->
+        </div>
+    </section>
+    <!-- About -->
     <section class="page-section" id="about">
         <div class="container">
             <div class="row">
@@ -143,47 +144,11 @@
         </div>
     </section>
 
-        <footer id="footer-section">
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 col-xs-12 segment-one">
-                            <h3>Hola</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis, aperiam quia optio, quod ipsa similique eos deleniti sit inventore pariatur repellendus repudiandae voluptatum dolor quae nulla dolores. Perferendis, facilis. Quod.</p>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12 segment-one">
-                            <h2>Hola</h3>
-                            <ul>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12 segment-one">
-                            <h2>Seguinos</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit autem debitis, dolore tempore minima sunt culpa magnam enim perferendis sint error, illum repellat suscipit a animi fugiat ut nostrum soluta.</p>
-                            <a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        </div>
-
-                        <div class="col-md-3 col-sm-6 col-xs-12 segment-one">
-                            <h2>Ultimas Noticias</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iusto explicabo veniam obcaecati, harum numquam velit officia deleniti, quas iure laudantium pariatur ullam! Voluptatem eligendi quo suscipit sunt alias expedita.</p>
-                            <form action="">
-                                <input type="email">
-                                <input type="submit" value="suscribete">
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-        </footer>
+    <?php include_once("codigoReutilizable/footer.php") ?>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    </body>
+</body>
+
 </html>
