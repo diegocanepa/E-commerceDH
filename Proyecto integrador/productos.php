@@ -17,7 +17,12 @@ require_once("codigoReutilizable/productos.php");
 
    //Agrego al arreglo el numerode id que se envia por post
    foreach ($_POST as $key => $value) {
-     $array[] = $key;
+     if($key === "qty" || $key === 206919){
+       //Nada
+     }else{
+       $array[] = $key;
+     }
+     
    }
 
    $_SESSION["idProductos"] = $array;
