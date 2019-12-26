@@ -1,3 +1,6 @@
+<?php if (isset($_POST)) {
+  
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php require_once("codigoReutilizable/head.php") ?>

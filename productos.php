@@ -15,17 +15,18 @@ require_once("codigoReutilizable/productos.php");
      }
    }
 
-   //Agrego al arreglo el numerode id que se envia por post
+   //Agrego al arreglo el numero de id que se envia por post
    foreach ($_POST as $key => $value) {
      if($key === "qty" || $key === 206919){
        //Nada
      }else{
        $array[] = $key;
      }
-     
+
    }
 
    $_SESSION["idProductos"] = $array;
+   header("Location: carrito.php");
  }
  ?>
 

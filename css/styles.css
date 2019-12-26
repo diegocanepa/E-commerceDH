@@ -717,6 +717,10 @@ th {
 td {
     background: rgba(218, 218, 196, 0.3);
 }
+tbody tr td img{
+  margin: 10px;
+  height: 100px;
+}
 
 .caja-pago {
     overflow: hidden;

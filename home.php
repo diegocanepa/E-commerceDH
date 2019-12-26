@@ -1,3 +1,11 @@
+<?php $usuarios = [
+  "usuario" => "admin",
+  "password" => "admin"
+  ]
+// $json = json_encode($usuarios);
+// $json = json_encode($auto);
+// json_decode($json, true);
+   ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php require_once("codigoReutilizable/head.php") ?>

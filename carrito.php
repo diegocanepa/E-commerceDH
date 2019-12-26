@@ -1,15 +1,29 @@
 
 <?php session_start();
   $total = 0;
-  $carro = $_SESSION["idProductos"];
+  if (isset($_SESSION["idProductos"])) {
+    $carro = $_SESSION["idProductos"];
+  }
 
   if ($_POST) {
-    if ($_POST["pagar"]) {
-      session_destroy();
-      header('Location: exito.php');
-    }else {
+    //inicio pagar
+    if (isset($_POST["pagar"])) {
+      if ($_POST["pagar"]) {
+        session_destroy();
+        header('Location: exito.php');
+      }
+    }
+    //fin pagar - inicio agregar
+    if (isset($_POST["agregar"])) {
+      if($_POST["agregar"]){
+        header('Location: productos.php');
+      }
+    }
+
+    //fin agregar - inicio cancelar
+    if($_POST["cancelar"]){
       if ($_POST["cancelar"]) {
-        session_destroy(); 
+        session_destroy();
         header('Location: home.php');
       }
     }
@@ -29,57 +43,61 @@
             <h1>Productos del carro</h1>
         </div>
         <form class="formulario" action="carrito.php" method="post">
-          <?php if(strlen($carro[0]) != 0):?>
-            <table class="egt" style="width:100%">
-              <thead>
-                <tr class="title">
-                  <th scope="row" colspan="2">Producto</th>
-                  <th scope="row">Precio</th>
-                </tr>
-              </thead>
-              <?php foreach($carro as $item): ?>
-                <tbody>
-                  <tr>
-                    <td><img src="<?php echo $productos[$item]["imagen"];?>" alt=""></td>
-                    <td><?php echo $productos[$item]["Nombre"];?></td>
-                    <td><?php echo "$" . $productos[$item]["precio"];?></td>
-                    <?php $total = $total + $productos[$item]["precio"]?>
+          <?php if (isset($carro)):?>
+            <?php if(strlen($carro[0]) != 0):?>
+              <table class="egt" style="width:100%">
+                <thead>
+                  <tr class="title">
+                    <th scope="row" colspan="2">Producto</th>
+                    <th scope="row">Precio</th>
                   </tr>
-                </tbody>
-              <?php endforeach; ?>
-              <tfoot>
-                <tr>
-                  <th>Total</th>
-                  <th></th>
-                  <td><?php echo "$total"; ?></td>
-                </tr>
-              </tfoot>
+                </thead>
+                <?php foreach($carro as $item): ?>
+                  <tbody>
+                    <tr>
+                      <td><img src="<?php echo $productos[$item]["imagen"];?>" alt=""></td>
+                      <td><?php echo $productos[$item]["Nombre"];?></td>
+                      <td><?php echo "$" . $productos[$item]["precio"];?></td>
+                      <?php $total = $total + $productos[$item]["precio"]?>
+                    </tr>
+                  </tbody>
+                <?php endforeach; ?>
+                <tfoot>
+                  <tr>
+                    <th scope="row" colspan="2">Total</th>
+                    <th><?php echo "$$total"; ?></th>
+                  </tr>
+                </tfoot>
 
-            </table>
-            <br>
-            <div class="jumbotron text-center titulo-carro titulo-pago">
-                <h1>Seleccione el metodo de pago</h1>
-            </div>
-            <div class="caja-pago align-item-center">
-              <div class="col-md-4 radios">
-                <input type="radio" name="metodo-pago" value="p">Paypal
-                <br>
-                <input type="radio" name="metodo-pago" value="tc" checked>Tarjeta de crédito
-                <br>
-                <input type="radio" name="metodo-pago" value="td">Tarjeta de débito
+              </table>
+              <br>
+              <!--
+              <div class="jumbotron text-center titulo-carro titulo-pago">
+                  <h1>Seleccione el metodo de pago</h1>
+              </div>
+              <div class="caja-pago align-item-center">
+                <div class="col-md-4 radios">
+                  <input type="radio" name="metodo-pago" value="p">Paypal
+                  <br>
+                  <input type="radio" name="metodo-pago" value="tc" checked>Tarjeta de crédito
+                  <br>
+                  <input type="radio" name="metodo-pago" value="td">Tarjeta de débito
+                </div>
+              -->
+                <div class="col-md-4 btn-group">
+                  <input type="submit" name="agregar" value="Agregar más productos">
+                  <input type="submit" name="pagar" value="Comprar">
+                  <input type="submit" name="cancelar" value="Cancelar compra">
+                </div>
               </div>
 
-              <div class="col-md-4 btn-group">
-                <input type="submit" name="pagar" value="Efectuar pago">
-                <input type="submit" name="cancelar" value="Cancelar">
-              </div>
-            </div>
 
-          <?php else: ?>
-            <div class="jumbotron text-center">
-                <h2>No hay ningun articulo en el carrito</h2>
-            </div>
-          <?php endif;?>
+          <?php endif; ?>
+        <?php else: ?>
+          <div class="jumbotron text-center">
+              <h2>No hay ningun articulo en el carrito</h2>
+          </div>
+        <?php endif; ?>
 
         </form>
       </div>
