@@ -595,6 +595,13 @@ li {
 }
 
 
+.error-validacion{
+  font-size: 11px;
+  color:#FF0000;
+  margin-bottom: 0px;
+}
+
+
 /* FORMULARIO DE REGISTRO */
 
 .form-register {
