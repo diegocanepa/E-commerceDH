@@ -8,24 +8,18 @@
   if ($_POST) {
     //inicio pagar
     if (isset($_POST["pagar"])) {
-      if ($_POST["pagar"]) {
         session_destroy();
         header('Location: exito.php');
-      }
     }
     //fin pagar - inicio agregar
     if (isset($_POST["agregar"])) {
-      if($_POST["agregar"]){
         header('Location: productos.php');
-      }
     }
 
     //fin agregar - inicio cancelar
     if($_POST["cancelar"]){
-      if ($_POST["cancelar"]) {
         session_destroy();
         header('Location: home.php');
-      }
     }
   }
 ?>
@@ -71,33 +65,18 @@
 
               </table>
               <br>
-              <!--
-              <div class="jumbotron text-center titulo-carro titulo-pago">
-                  <h1>Seleccione el metodo de pago</h1>
-              </div>
-              <div class="caja-pago align-item-center">
-                <div class="col-md-4 radios">
-                  <input type="radio" name="metodo-pago" value="p">Paypal
-                  <br>
-                  <input type="radio" name="metodo-pago" value="tc" checked>Tarjeta de crédito
-                  <br>
-                  <input type="radio" name="metodo-pago" value="td">Tarjeta de débito
-                </div>
-              -->
                 <div class="col-md-4 btn-group">
                   <input type="submit" name="agregar" value="Agregar más productos">
                   <input type="submit" name="pagar" value="Comprar">
                   <input type="submit" name="cancelar" value="Cancelar compra">
                 </div>
-              </div>
 
-
+            <?php endif; ?>
+          <?php else: ?>
+            <div class="jumbotron text-center">
+                <h2>No hay ningun articulo en el carrito</h2>
+            </div>
           <?php endif; ?>
-        <?php else: ?>
-          <div class="jumbotron text-center">
-              <h2>No hay ningun articulo en el carrito</h2>
-          </div>
-        <?php endif; ?>
 
         </form>
       </div>
