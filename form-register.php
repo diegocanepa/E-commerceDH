@@ -8,11 +8,44 @@ if ($_POST) {
       header('Location: productos.php');
   }
   //Recibo todos los errores de las validaciones
-  $errores = validarForm();
+  $errores = validarFormRegistrar();
 
   //Si no hay errores, entonces registro al usuario
   if (count($errores) == 0) {
     //primero guardo los datos del usuario
+
+    if (file_exists("usuarios.json")) {
+      $json = file_get_contents("usuarios.json");
+      $usuarios = json_decode($json , true);
+      var_dump($usuarios);
+
+      $usuarios[] = [
+        "nombre" => trim($_POST["nombre"]),
+        "email" => trim($_POST["e-mail"]),
+        "password" => password_hash($_POST["password"],PASSWORD_DEFAULT)
+      ];
+
+      $jsonFinal = json_encode($usuarios);
+      file_put_contents("usuarios.json", $jsonFinal);
+    //  header("Location: productos.php");
+    //  exit;
+    }else {
+      $usuario = [
+        0 =>[ "nombre" => trim($_POST["nombre"]),
+              "email" => trim($_POST["e-mail"]),
+              "password" => password_hash($_POST["password"],PASSWORD_DEFAULT)
+        ]
+      ];
+      //despues lo convierto en json
+      $usuarioJson = json_encode($usuario);
+      //por ultimo lo guardo
+      file_put_contents("usuarios.json", $usuarioJson);
+      //Redirijo a productos.php
+      header("Location: productos.php");
+      exit;
+    }
+
+    /*
     $usuario = [
       "nombre" => trim($_POST["nombre"]),
       "email" => trim($_POST["e-mail"]),
@@ -21,10 +54,11 @@ if ($_POST) {
     //despues lo convierto en json
     $usuarioJson = json_encode($usuario);
     //por ultimo lo guardo
-    file_put_contents("usuarios.json", $usuarioJson . PHP_EOL, FILE_APPEND);
+    file_put_contents("usuarios.json", $usuarioJson, FILE_APPEND);
     //Redirijo a productos.php
     header("Location: productos.php");
     exit;
+    */
   }
 }
 ?>

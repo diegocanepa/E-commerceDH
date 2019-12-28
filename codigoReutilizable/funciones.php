@@ -1,5 +1,7 @@
 <?php
-function validarForm(){
+
+//valida los datos del formulario de registro
+function validarFormRegistrar(){
   $arrayErrores = [];
   if (isset($_POST["nombre"])) {
 
@@ -43,6 +45,33 @@ function validarForm(){
   }
   return $arrayErrores;
 }
+
+//valida los datos del formulario de Login
+function validarFormLogin(){
+  $arrayErrores = [];
+  if (isset($_POST["email"])) {
+    if (empty($_POST["email"])) {
+      $arrayErrores["email"][] = "El campo email es obligatorio.";
+    }else {
+      if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        $arrayErrores["email"][] = "Este no es un email valido.";
+      }
+    }
+  }
+
+  if (isset($_POST["password"])) {
+    if (empty($_POST["password"])) {
+      $arrayErrores["password"][] = "El campo password es obligatorio.";
+    }else {
+      if (strlen(trim($_POST["password"])) < 7) {
+        $arrayErrores["password"][] = "La contraseña debe tener una longitud mayor a 7 caracteres.";
+      }
+    }
+  }
+  return $arrayErrores;
+}
+
+
 
 //mantener datos
 function persistirDato($dato, $array){

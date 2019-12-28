@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
 <?php
-if ($_POST) {
-  $validacionesEmail = [];
-  $validacionesPassword = [];
+require_once("./codigoReutilizable/funciones.php");
 
-  if (filter_var($_POST["email"]) == false) {
-    $validacionesEmail[] = "El campo mail esta vacio!!";
-  }
-  if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false) {
-    $validacionesEmail[] = "El email no tiene el formato correspondiente!! ";
-  }
-  if (filter_var($_POST["password"]) == false) {
-    $validacionesPassword[] = "El campo contraseña esta vacio!! ";
-  }
-  if (strlen($_POST["password"]) < 6) {
-    $validacionesPassword[] = "La contraseña es demasiado debil. Proba con una mas larga!! ";
+$errores = [];
+
+if ($_POST) {
+  //Recibo todos los errores de las validaciones
+  $errores = validarFormLogin();
+
+  //Si no hay errores, entonces registro al usuario
+  if (count($errores) == 0) {
+    //controlo que verdaderamente exista el usuarios.
+    $json = file_get_contents("usuarios.json");
+    $arrayUsuarios = json_decode($json, true);
+    var_dump($arrayUsuarios);
+    foreach ($arrayUsuarios as $key => $value) {
+        echo $value["email"];
+        if ($value["email"] == $_POST["email"] && password_verify($_POST["password"], $value["password"])) {
+          header("Location: productos.php");
+          exit;
+      }
+    }
+    echo "NOOOOOOOOOOOOOOOOOOOOOO no tas registrado";
   }
 }
-
-
- ?>
-
-
+?>
+<html lang="en">
 <?php require_once("codigoReutilizable/head.php") ?>
 <body>
         <!-- Navigation -->
@@ -59,29 +62,13 @@ if ($_POST) {
                     <form class="" action="form-login.php" method="post">
                       <div class="box-email">
                           <label class="label-login" for="email">Email</label>
-                          <input class="input-login" type="email" id="email" name="email">
-                          <?php if ($_POST): ?>
-                            <?php if (count($validacionesEmail) == 0 && count($validacionesPassword) == 0): ?>
-                                <?php header("Location: http://localhost/E-commerceDH/home.php"); ?>
-                            <?php else: ?>
-                              <?php foreach ($validacionesEmail as $value): ?>
-                                  <p class="error-validacion"><?php echo $value; ?></p>
-                              <?php endforeach; ?>
-                            <?php endif; ?>
-                          <?php endif; ?>
+                          <input class="input-login" type="email" id="email" name="email" placeholder="Escribe tu E-mail aqui..." value="<?= persistirDato("email", $errores) ?>">
+                          <?= imprimirErrores("email", $errores)?>
                       </div>
                       <div class="box-pass">
                           <label class="label-login" for="password">Password</label>
-                          <input class="input-login" type="password" id="password" name="password">
-                          <?php if ($_POST): ?>
-                            <?php if (count($validacionesEmail) == 0 && count($validacionesPassword) == 0): ?>
-                                <meta http-equiv="refresh" content="10; url=http://localhost/E-commerceDH/home.php">
-                            <?php else: ?>
-                              <?php foreach ($validacionesPassword as $value): ?>
-                                  <p class="error-validacion"><?php echo $value; ?></p>
-                              <?php endforeach; ?>
-                            <?php endif; ?>
-                          <?php endif; ?>
+                          <input class="input-login" type="password" id="password" name="password" placeholder="Escribe tu nombre aqui..." value="<?= persistirDato("password", $errores) ?>">
+                          <?= imprimirErrores("password", $errores)?>
                       </div>
                       <div class="boton-send">
                           <div class="input-send"><input type="submit" id="submit-login" value="Entrar"></div>
