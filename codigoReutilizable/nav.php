@@ -10,7 +10,7 @@ inciarSesion();
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <?php //Si el usuario no se encuentra logueado
-        if (!isset($_SESSION['id'])) {
+        if (!isset($_SESSION["id-email"])) {
         ?>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
