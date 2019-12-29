@@ -11,29 +11,11 @@ if ($_POST) {
 
   //Si no hay errores, entonces logeo al usuario. En la funcion anterior se verifica que el usuario exista en el json
   if (count($errores) == 0) {
-<<<<<<< HEAD
-    //controlo que verdaderamente exista el usuarios.
-    $json = file_get_contents("usuarios.json");
-    $arrayUsuarios = json_decode($json, true);
-    var_dump($arrayUsuarios);
-    foreach ($arrayUsuarios as $key => $value) {
-        echo $value["password"];
-        echo $_POST["password"];
-        if ($value["email"] == $_POST["email"] && password_verify($_POST["password"], $value["password"])) {
-            inciarSesion();
-            $_SESSION["id"] = $_POST["email"];
-            header("Location: productos.php");
-            exit;
-      }
-    }
-    echo "NOOOOOOOOOOOOOOOOOOOOOO no tas registrado";
-=======
 
     $_SESSION['id'] = $_POST["e-mail"];
     $_SESSION['estado'] = 'Autenticado';
     header("Location: productos.php");
     exit;
->>>>>>> 4f3d72af9a2066841df7d44b35bd119d20d4bd1b
   }
 
 
