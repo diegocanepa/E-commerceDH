@@ -10,7 +10,7 @@
                                     <a class="tag-footer" href="">Envio</a>
                                 </li>
                                 <li>
-                                    <a class="tag-footer" href="">Preguntas frecuentes</a>
+                                    <a class="tag-footer" href="">Pagos</a>
                                 </li>
                                 <li>
                                     <a class="tag-footer" href="">Ofertas</a>

@@ -89,10 +89,7 @@ function validarFormLogin(){
         if (file_exists("usuarios.json")) {
           $json = file_get_contents("usuarios.json");
           $usuarios = json_decode($json , true);
-          //var_dump($arrayUsuarios);
           foreach ($usuarios as $key => $usuario) {
-              //echo $value["password"];
-              //echo $_POST["password"];
               if ($usuario["e-mail"] == $_POST["e-mail"] && !password_verify($_POST["password"], $usuario["password"])) {
                 $arrayErrores["password"][] = "La contraseña ingresada es incorrecta.";
               }

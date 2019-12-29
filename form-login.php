@@ -7,10 +7,9 @@ $errores = [];
 
 if ($_POST) {
   //Recibo todos los errores de las validaciones
-
   $errores = validarFormLogin();
 
-  //Si no hay errores, entonces logeo al usuario
+  //Si no hay errores, entonces logeo al usuario. En la funcion anterior se verifica que el usuario exista en el json
   if (count($errores) == 0) {
 
     $_SESSION['id'] = $_POST["e-mail"];

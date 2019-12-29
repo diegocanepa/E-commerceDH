@@ -24,7 +24,7 @@
                   <div class="card">
                       <div id="headingOne" class="card-header bg-white shadow-sm border-0">
                           <h2 class="mb-0">
-                              <button type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="btn btn-link text-dark font-weight-bold text-uppercase collapsible-link">¿Como se realiza una compra?</button>
+                              <button type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="btn btn-link text-dark font-weight-bold text-uppercase collapsible-link">¿Como se realiza una compra?</button>
                           </h2>
                       </div>
                       <div id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample" class="collapse show">
@@ -91,7 +91,7 @@
                   <div class="card">
                       <div id="headingThree" class="card-header bg-white shadow-sm border-0">
                           <h2 class="mb-0">
-                              <button type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="btn btn-link collapsed text-dark font-weight-bold text-uppercase collapsible-link">¿Cómo utilizo mi cupón de descuento?</button>
+                              <button type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="btn btn-link collapsed text-dark font-weight-bold text-uppercase collapsible-link">¿Cómo utilizo mi cupón de descuento?</button>
                           </h2>
                       </div>
                       <div id="collapseThree" aria-labelledby="headingThree" data-parent="#accordionExample" class="collapse">
@@ -106,7 +106,7 @@
                   <div class="card">
                       <div id="headingThree" class="card-header bg-white shadow-sm border-0">
                           <h2 class="mb-0">
-                              <button type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="btn btn-link collapsed text-dark font-weight-bold text-uppercase collapsible-link">¿Todos los productos tienen devolución?</button>
+                              <button type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" class="btn btn-link collapsed text-dark font-weight-bold text-uppercase collapsible-link">¿Todos los productos tienen devolución?</button>
                           </h2>
                       </div>
                       <div id="collapseThree" aria-labelledby="headingThree" data-parent="#accordionExample" class="collapse">
@@ -120,7 +120,7 @@
                   <div class="card">
                       <div id="headingThree" class="card-header bg-white shadow-sm border-0">
                           <h2 class="mb-0">
-                              <button type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="btn btn-link collapsed text-dark font-weight-bold text-uppercase collapsible-link">Inconvenientes con la entrega</button>
+                              <button type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" class="btn btn-link collapsed text-dark font-weight-bold text-uppercase collapsible-link">Inconvenientes con la entrega</button>
                           </h2>
                       </div>
                       <div id="collapseThree" aria-labelledby="headingThree" data-parent="#accordionExample" class="collapse">

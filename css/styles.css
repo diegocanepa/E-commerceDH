@@ -804,18 +804,36 @@ tbody tr td img {
 }
 
 
-/* SECCION FAQ */
+/* PREGUNTAS FRECUENTES */
 
-#section-faq {
-    padding-top: 6%;
-    padding-bottom: 0%;
+
+.collapsible-link {
+    width: 100%;
+    position: relative;
+    text-align: left;
 }
 
-.titulo-faq {
-    text-align: center;
-    padding-bottom: 3%;
+.collapsible-link::before {
+    content: '\f107';
+    position: absolute;
+    top: 30%;
+    right: 0.8rem;
+    transform: translateY(-50%);
+    display: block;
+    font-family: 'FontAwesome';
+    font-size: 1.1rem;
+    bottom: 33%
 }
 
-#accordionExample {
-    height: 100%;
+.collapsible-link[aria-expanded='true']::before {
+    content: '\f106';
+}
+
+.body-preg {
+    background: #fed136;
+    min-height: 100vh;
+}
+
+.contenedor-preguntas{
+  padding-bottom: 30px;
 }
