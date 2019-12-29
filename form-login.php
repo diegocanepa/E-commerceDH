@@ -19,10 +19,10 @@ if ($_POST) {
         echo $value["password"];
         echo $_POST["password"];
         if ($value["email"] == $_POST["email"] && password_verify($_POST["password"], $value["password"])) {
-            $_SESSION['id'] = $value["email"];
-            $_SESSION['estado'] = 'Autenticado';
-          header("Location: productos.php");
-          exit;
+            inciarSesion();
+            $_SESSION["id"] = $_POST["email"];
+            header("Location: productos.php");
+            exit;
       }
     }
     echo "NOOOOOOOOOOOOOOOOOOOOOO no tas registrado";
