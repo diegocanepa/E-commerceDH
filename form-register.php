@@ -13,34 +13,28 @@ if ($_POST) {
 
   //Si no hay errores, entonces registro al usuario
   if (count($errores) == 0) {
-    //primero guardo los datos del usuario
 
     if (file_exists("usuarios.json")) {
       $json = file_get_contents("usuarios.json");
       $usuarios = json_decode($json , true);
+      //var_dump($usuarios);
 
-      if (usuarioRegistrado($usuarios) == false) {
-        var_dump($usuarios);
-        $usuarios[] = [
-          "nombre" => trim($_POST["nombre"]),
-          "email" => trim($_POST["e-mail"]),
-          "password" => password_hash($_POST["password"],PASSWORD_DEFAULT)
-        ];
-  
-        $jsonFinal = json_encode($usuarios);
-        file_put_contents("usuarios.json", $jsonFinal);
-      //  header("Location: productos.php");
-      //  exit;
-      }
-      else{
-        echo("El email ya esta registrado");
-      }
+      //primero guardo los datos del usuario
+      $usuarios[] = [
+        "nombre" => trim($_POST["nombre"]),
+        "e-mail" => trim($_POST["e-mail"]),
+        "password" => password_hash($_POST["password"],PASSWORD_DEFAULT)
+      ];
 
+      $jsonFinal = json_encode($usuarios);
+      file_put_contents("usuarios.json", $jsonFinal);
+      header("Location: productos.php");
+      exit;
     }
     else {
       $usuario = [
         0 =>[ "nombre" => trim($_POST["nombre"]),
-              "email" => trim($_POST["e-mail"]),
+              "e-mail" => trim($_POST["e-mail"]),
               "password" => password_hash($_POST["password"],PASSWORD_DEFAULT)
         ]
       ];
