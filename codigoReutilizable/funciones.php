@@ -20,6 +20,14 @@ function validarFormRegistrar(){
     }else {
       if (!filter_var($_POST["e-mail"], FILTER_VALIDATE_EMAIL)) {
         $arrayErrores["e-mail"][] = "Este no es un email valido.";
+      }else {
+        if (file_exists("usuarios.json")) {
+          $json = file_get_contents("usuarios.json");
+          $usuarios = json_decode($json , true);
+          if (usuarioRegistrado($usuarios)) {
+            $arrayErrores["e-mail"][] = "El email ya esta registrado";
+          }
+        }
       }
     }
   }
@@ -39,11 +47,10 @@ function validarFormRegistrar(){
       $arrayErrores["re-password"][] = "El campo re-password es obligatorio.";
     }else {
       if ($_POST["password"] != $_POST["re-password"]) {
-        $arrayErrores["re-password"][] = "Las contraseñas deben coincidir.";
+        $arrayErrores["re-password"][] = "Ambas contraseñas deben coincidir.";
       }
     }
   }
-
 
   return $arrayErrores;
 }
@@ -51,12 +58,23 @@ function validarFormRegistrar(){
 //valida los datos del formulario de Login
 function validarFormLogin(){
   $arrayErrores = [];
-  if (isset($_POST["email"])) {
-    if (empty($_POST["email"])) {
-      $arrayErrores["email"][] = "El campo email es obligatorio.";
+  if (isset($_POST["e-mail"])) {
+    if (empty($_POST["e-mail"])) {
+      $arrayErrores["e-mail"][] = "El campo email es obligatorio.";
     }else {
-      if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-        $arrayErrores["email"][] = "Este no es un email valido.";
+      if (!filter_var($_POST["e-mail"], FILTER_VALIDATE_EMAIL)) {
+        $arrayErrores["e-mail"][] = "Este no es un email valido.";
+      }else {
+        //controlo que verdaderamente exista el usuarios.
+        if (file_exists("usuarios.json")) {
+          $json = file_get_contents("usuarios.json");
+          $usuarios = json_decode($json , true);
+          if (!usuarioRegistrado($usuarios)) {
+            $arrayErrores["e-mail"][] = "El email no está registrado";
+          }
+        }else {
+          $arrayErrores["e-mail"][] = "El email no está registrado";
+        }
       }
     }
   }
@@ -67,12 +85,24 @@ function validarFormLogin(){
     }else {
       if (strlen(trim($_POST["password"])) < 7) {
         $arrayErrores["password"][] = "La contraseña debe tener una longitud mayor a 7 caracteres.";
+      }else {
+        if (file_exists("usuarios.json")) {
+          $json = file_get_contents("usuarios.json");
+          $usuarios = json_decode($json , true);
+          //var_dump($arrayUsuarios);
+          foreach ($usuarios as $key => $usuario) {
+              //echo $value["password"];
+              //echo $_POST["password"];
+              if ($usuario["e-mail"] == $_POST["e-mail"] && !password_verify($_POST["password"], $usuario["password"])) {
+                $arrayErrores["password"][] = "La contraseña ingresada es incorrecta.";
+              }
+          }
+        }
       }
     }
   }
   return $arrayErrores;
 }
-
 
 
 //mantener datos
@@ -108,7 +138,7 @@ function inciarSesion()
 
 function usuarioRegistrado($usuarios){
   foreach ($usuarios as $usuario) {
-    if($usuario["email"] == trim($_POST["e-mail"])){
+    if($usuario["e-mail"] == trim($_POST["e-mail"])){
       return true;
     }
   }
