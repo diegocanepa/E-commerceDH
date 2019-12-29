@@ -1,6 +1,7 @@
 <?php
 require_once("./codigoReutilizable/funciones.php");
-
+iniciarSesion();
+verificarLogout();
 
 $errores = [];
 

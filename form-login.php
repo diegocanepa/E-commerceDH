@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php
 require_once("./codigoReutilizable/funciones.php");
-
+iniciarSesion();
+verificarLogout();
 
 $errores = [];
 
@@ -11,27 +12,22 @@ if ($_POST) {
 
   //Si no hay errores, entonces logeo al usuario. En la funcion anterior se verifica que el usuario exista en el json
   if (count($errores) == 0) {
-
     $_SESSION['id'] = $_POST["e-mail"];
     $_SESSION['estado'] = 'Autenticado';
     header("Location: productos.php");
     exit;
   }
 
-
 }
 ?>
 <html lang="en">
 <?php require_once("codigoReutilizable/head.php") ?>
-<body>
-        <!-- Navigation -->
-        <?php require_once("codigoReutilizable/nav.php") ?>
+<!-- Navigation -->
+<?php require_once("codigoReutilizable/nav.php") ?>
 
 <body id="body-login">
     <div class="page-login">
         <div class="container-login">
-
-
 
             <div class="left-login">
                 <div class="container">

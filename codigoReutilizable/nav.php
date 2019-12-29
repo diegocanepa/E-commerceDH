@@ -1,6 +1,6 @@
 <?php
-require_once("./codigoReutilizable/funciones.php");
-inciarSesion();
+//require_once("./codigoReutilizable/funciones.php");
+//inciarSesion();
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navbar-respon">
@@ -9,9 +9,6 @@ inciarSesion();
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <?php //Si el usuario no se encuentra logueado
-        if (!isset($_SESSION['id'])) {
-        ?>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" id="nav-li" href="productos.php">Productos</a>
@@ -23,6 +20,9 @@ inciarSesion();
                     <a class="nav-link" id="nav-li" href="home.php#footer-section">Contactanos</a>
                 </li>
             </ul>
+            <?php //Si el usuario no se encuentra logueado
+            if (!isset($_SESSION['id'])) {
+            ?>
             <div class="form-inline my-2 my-lg-0" id="end">
                 <div class="menu-derecha" id="menu-derecha">
                     <li class="nav-item">
@@ -40,10 +40,12 @@ inciarSesion();
                         <div class="menu-derecha" id="menu-derecha">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" id="nav-li" href="" onclick="<?php session_destroy(); ?>">Log out </a>
+                                  <form class="" action="" method="post">
+                                    <a class="nav-link" id="nav-li" href="<?php $_SERVER['PHP_SELF']; ?>" name="logout"><input class="logInOut" type="submit" name="logout" value="Log out"></a>
+                                  </form>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="nav-li" href="form-register.php">Mi perfil</a>
+                                    <a class="nav-link" id="nav-li" href="perfil-usuario.php">Mi perfil</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="nav-li-carrito" href="carrito.php"><img id="carrito-compras-img" src="resources/carrito-compras2.png" alt=""></a>

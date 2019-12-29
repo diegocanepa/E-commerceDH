@@ -126,7 +126,7 @@ function imprimirErrores($dato, $array){
   return $strErrores;
 }
 
-function inciarSesion()
+function iniciarSesion()
 {
   session_start();
 }
@@ -140,5 +140,27 @@ function usuarioRegistrado($usuarios){
     }
   }
   return false;
+}
+
+function verificarLogout(){
+  if (isset($_POST["logout"])) {
+    unset($_SESSION["id"]);
+
+    //header('Location: ' . $_SERVER['PHP_SELF']);
+    header('Location: home.php');
+  }
+}
+
+function rellenarPerfil($dato){
+  if (isset($_SESSION["id"])) {
+    $json = file_get_contents("usuarios.json");
+    $usuarios = json_decode($json , true);
+    foreach ($usuarios as $usuario) {
+      if ($usuario["e-mail"] == $_SESSION["id"]) {
+        return $usuario[$dato];
+      }
+    }
+    return "";
+  }
 }
  ?>

@@ -1,10 +1,8 @@
-<?php $usuarios = [
-  "usuario" => "admin",
-  "password" => "admin"
-  ]
-// $json = json_encode($usuarios);
-// $json = json_encode($auto);
-// json_decode($json, true);
+<?php
+require_once("codigoReutilizable/funciones.php");
+iniciarSesion();
+verificarLogout();
+//unset($_SESSION["id"]);
    ?>
 <!DOCTYPE html>
 <html lang="en">

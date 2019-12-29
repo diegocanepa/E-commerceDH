@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php
 require_once("codigoReutilizable/productos.php");
+require_once("codigoReutilizable/funciones.php");
+iniciarSesion();
+
  ?>
 
  <?php
@@ -8,25 +11,29 @@ require_once("codigoReutilizable/productos.php");
  $array = [];
 
  if ($_POST) {
-   //Si existe una sesion previa obtengo todos los valores de id
-   if (isset($_SESSION["idProductos"])) {
-     foreach ($_SESSION["idProductos"] as $indice => $valor) {
-       $array[] = $valor;
-     }
-   }
-
-   //Agrego al arreglo el numero de id que se envia por post
-   foreach ($_POST as $key => $value) {
-     if($key === "qty" || $key === 206919){
-       //Nada
-     }else{
-       $array[] = $key;
+   if (isset($_POST["logout"])) {
+     verificarLogout();
+   }else {
+     //Si existe una sesion previa obtengo todos los valores de id
+     if (isset($_SESSION["idProductos"])) {
+       foreach ($_SESSION["idProductos"] as $indice => $valor) {
+         $array[] = $valor;
+       }
      }
 
+     //Agrego al arreglo el numero de id que se envia por post
+     foreach ($_POST as $key => $value) {
+       if($key === "qty" || $key === 206919 || $key === "logout"){
+         //Nada
+       }else{
+         $array[] = $key;
+       }
+
+     }
+     $_SESSION["idProductos"] = $array;
+     header("Location: carrito.php");
    }
 
-   $_SESSION["idProductos"] = $array;
-   header("Location: carrito.php");
  }
  ?>
 
@@ -40,7 +47,7 @@ require_once("codigoReutilizable/productos.php");
               <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
           </div>
       </section>
-      
+
 
       <div class="container">
         <form class="form-agrupa" action="productos.php" method="post">
