@@ -2,6 +2,7 @@
 <?php
 require_once("./codigoReutilizable/funciones.php");
 
+
 $errores = [];
 
 if ($_POST) {
@@ -15,8 +16,11 @@ if ($_POST) {
     $arrayUsuarios = json_decode($json, true);
     var_dump($arrayUsuarios);
     foreach ($arrayUsuarios as $key => $value) {
-        echo $value["email"];
+        echo $value["password"];
+        echo $_POST["password"];
         if ($value["email"] == $_POST["email"] && password_verify($_POST["password"], $value["password"])) {
+            $_SESSION['id'] = $value["email"];
+            $_SESSION['estado'] = 'Autenticado';
           header("Location: productos.php");
           exit;
       }

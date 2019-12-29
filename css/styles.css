@@ -428,19 +428,21 @@ li {
 }
 
 .box-email {
-    padding-top: 2rem;
+    /* padding-top: 3rem; */
     padding-left: 2rem;
     padding-right: 2rem;
+    margin-top: 15%;
 }
 
 .box-pass {
-    padding-top: 1rem;
+    /* padding-top: 2rem; */
     padding-left: 2rem;
     padding-right: 2rem;
+    margin-top: 14%;
 }
 
 .boton-send {
-    margin-top: -7%;
+    margin-top: 0%;
 }
 
 @media (max-width: 767px) {
@@ -506,6 +508,7 @@ li {
     color: #F1F1F2;
     position: relative;
     width: 50%;
+    height: 125%;
 }
 
 .log-forgot-pass {
@@ -594,11 +597,10 @@ li {
     color: black;
 }
 
-
-.error-validacion{
-  font-size: 11px;
-  color:#FF0000;
-  margin-bottom: 0px;
+.error-validacion {
+    font-size: 11px;
+    color: #FF0000;
+    margin-bottom: 0px;
 }
 
 
@@ -724,9 +726,10 @@ th {
 td {
     background: rgba(218, 218, 196, 0.3);
 }
-tbody tr td img{
-  margin: 10px;
-  height: 100px;
+
+tbody tr td img {
+    margin: 10px;
+    height: 100px;
 }
 
 .caja-pago {

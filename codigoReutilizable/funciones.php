@@ -43,6 +43,8 @@ function validarFormRegistrar(){
       }
     }
   }
+
+
   return $arrayErrores;
 }
 
@@ -95,5 +97,21 @@ function imprimirErrores($dato, $array){
     }
   }
   return $strErrores;
+}
+
+function inciarSesion()
+{
+  session_start();
+}
+
+
+
+function usuarioRegistrado($usuarios){
+  foreach ($usuarios as $usuario) {
+    if($usuario["email"] == trim($_POST["e-mail"])){
+      return true;
+    }
+  }
+  return false;
 }
  ?>

@@ -3,7 +3,7 @@
 require_once("codigoReutilizable/productos.php");
  ?>
 
- <?php session_start();
+ <?php
  // Inicializo el array vacio
  $array = [];
 
