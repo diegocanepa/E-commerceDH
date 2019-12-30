@@ -40,12 +40,10 @@
                         <div class="menu-derecha" id="menu-derecha">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                  <form class="" action="" method="post">
-                                    <a class="nav-link" id="nav-li" href="<?php $_SERVER['PHP_SELF']; ?>" name="logout"><input class="logInOut" type="submit" name="logout" value="Log out"></a>
-                                  </form>
+                                  <a class="nav-link" id="nav-li" href="logout.php" name="logout">Log out</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="nav-li" href="perfil-usuario.php">Mi perfil</a>
+                                    <a class="nav-link" id="nav-li" href="perfil.php">Mi perfil</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="nav-li-carrito" href="carrito.php"><img id="carrito-compras-img" src="resources/carrito-compras2.png" alt=""></a>

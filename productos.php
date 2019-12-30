@@ -11,28 +11,25 @@ iniciarSesion();
  $array = [];
 
  if ($_POST) {
-   if (isset($_POST["logout"])) {
-     verificarLogout();
-   }else {
-     //Si existe una sesion previa obtengo todos los valores de id
-     if (isset($_SESSION["idProductos"])) {
-       foreach ($_SESSION["idProductos"] as $indice => $valor) {
-         $array[] = $valor;
-       }
-     }
 
-     //Agrego al arreglo el numero de id que se envia por post
-     foreach ($_POST as $key => $value) {
-       if($key === "qty" || $key === 206919 || $key === "logout"){
-         //Nada
-       }else{
-         $array[] = $key;
-       }
-
+   //Si existe una sesion previa obtengo todos los valores de id
+   if (isset($_SESSION["idProductos"])) {
+     foreach ($_SESSION["idProductos"] as $indice => $valor) {
+       $array[] = $valor;
      }
-     $_SESSION["idProductos"] = $array;
-     header("Location: carrito.php");
    }
+
+   //Agrego al arreglo el numero de id que se envia por post
+   foreach ($_POST as $key => $value) {
+     if($key === "qty" || $key === 206919 || $key === "logout"){
+       //Nada
+     }else{
+       $array[] = $key;
+     }
+
+   }
+   $_SESSION["idProductos"] = $array;
+   header("Location: carrito.php");
 
  }
  ?>

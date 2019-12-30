@@ -1,7 +1,10 @@
 <?php
 require_once("codigoReutilizable/funciones.php");
 iniciarSesion();
-verificarLogout();
+
+$json = file_get_contents("usuarios.json");
+$usuarios = json_decode($json , true);
+$usuarioActual = $usuarios[$_SESSION["indice"]];
  ?>
  <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +59,7 @@ verificarLogout();
                                             Nombre
                                         </label>
                                         <div class="col-md-6">
-                                            <input class="form-control" name="firstname" type="text" value="<?=rellenarPerfil("nombre"); ?>" required="">
+                                            <input class="form-control" name="firstname" type="text" value="<?=$usuarioActual["nombre"]; ?>" required="">
                                         </div>
                                         <div class="col-md-6 text-muted">
                                         </div>
@@ -76,7 +79,7 @@ verificarLogout();
                                             Dirección de correo electrónico
                                         </label>
                                         <div class="col-md-6">
-                                            <input class="form-control" name="email" type="email" value="<?=rellenarPerfil("e-mail"); ?>" required="">
+                                            <input class="form-control" name="email" type="email" value="<?=$usuarioActual["e-mail"]; ?>" required="">
                                         </div>
                                         <div class="col-md-6 text-muted">
                                         </div>

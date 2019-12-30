@@ -1,4 +1,4 @@
-<?php
+  <?php
 
 //valida los datos del formulario de registro
 function validarFormRegistrar(){
@@ -92,6 +92,8 @@ function validarFormLogin(){
           foreach ($usuarios as $key => $usuario) {
               if ($usuario["e-mail"] == $_POST["e-mail"] && !password_verify($_POST["password"], $usuario["password"])) {
                 $arrayErrores["password"][] = "La contraseña ingresada es incorrecta.";
+              }else {
+                $_SESSION["indice"] = $key;
               }
           }
         }
@@ -101,9 +103,15 @@ function validarFormLogin(){
   return $arrayErrores;
 }
 
+function guardarCookie(){
+
+}
 
 //mantener datos
 function persistirDato($dato, $array){
+if (isset($_COOKIE[$dato])) {
+  return $_COOKIE[$dato];
+}else {
   if (isset($array[$dato])) {
     return "";
   }else {
@@ -113,6 +121,9 @@ function persistirDato($dato, $array){
       return "";
     }
   }
+}
+
+
 }
 
 //Devolver errores
@@ -142,25 +153,37 @@ function usuarioRegistrado($usuarios){
   return false;
 }
 
-function verificarLogout(){
-  if (isset($_POST["logout"])) {
-    unset($_SESSION["id"]);
-
-    //header('Location: ' . $_SERVER['PHP_SELF']);
-    header('Location: home.php');
+function validarFormEditPerfil(){
+  $arrayErrores = [];
+  if (isset($_POST["nombre"])) {
+    if (empty($_POST["nombre"])) {
+      $arrayErrores["e-mail"][] = "El campo nombre es obligatorio.";
+    }
   }
-}
 
-function rellenarPerfil($dato){
-  if (isset($_SESSION["id"])) {
-    $json = file_get_contents("usuarios.json");
-    $usuarios = json_decode($json , true);
-    foreach ($usuarios as $usuario) {
-      if ($usuario["e-mail"] == $_SESSION["id"]) {
-        return $usuario[$dato];
+  if (isset($_POST["e-mail"])) {
+    if (empty($_POST["e-mail"])) {
+      $arrayErrores["e-mail"][] = "El campo email es obligatorio.";
+    }
+  }
+
+  if (isset($_POST["dir1"])) {
+    if (empty($_POST["dir1"])) {
+      $arrayErrores["e-mail"][] = "El campo direccion es obligatorio.";
+    }
+  }
+
+  //VAlidando el archivo
+  if (isset($_FILE["foto"])) {
+    if ($_FILES["foto"]["error"] != 0) {
+      $arrayErrores["foto"] = "Hubo un error al cargar la imagen";
+    }else {
+      $extension = pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION);
+      if ($extension != jpg) {
+        $arrayErrores["foto"] = "El formatode la iagen debe ser .jpg";
       }
     }
-    return "";
   }
+  return $arrayErrores;
 }
  ?>

@@ -2,7 +2,9 @@
 <?php
 require_once("codigoReutilizable/funciones.php");
 iniciarSesion();
-verificarLogout();
+
+
+
   $total = 0;
   $carro = [];
   if (isset($_SESSION["idProductos"])) {
@@ -12,9 +14,15 @@ verificarLogout();
   if ($_POST) {
     //inicio pagar
     if (isset($_POST["pagar"])) {
+      if (!isset($_SESSION["id"])) {
+        header("Location: form-login.php");
+      }else {
         unset($_SESSION["idProductos"]);
         $carro = [];
+
         header('Location: exito.php');
+      }
+
     }
     //fin pagar - inicio agregar
     if (isset($_POST["agregar"])) {

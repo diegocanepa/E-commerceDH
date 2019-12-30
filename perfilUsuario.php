@@ -1,3 +1,71 @@
+<?php
+require_once("codigoReutilizable/funciones.php");
+iniciarSesion();
+$json = file_get_contents("usuarios.json");
+$usuarios = json_decode($json , true);
+$usuarioActual = $usuarios[$_SESSION["indice"]];
+
+$errores = [];
+if ($_POST) {
+  //Recibo todos los errores de las validaciones
+  $errores = validarFormEditPerfil();
+
+  //Si no hay errores, entonces registro al usuario
+  if (count($errores) == 0) {
+
+    if (isset($_FILES["foto"])) {
+      move_uploaded_file($_FILES["foto"]["tmp_name"], "img/foto-usuario" . $_SESSION["indice"] . ".jpg");
+      $_SESSION["foto"] = "img/foto-usuario" . $_SESSION["indice"] . ".jpg";
+    }else {
+      $_SESSION["foto"] = "img/messi-perfil.jpg";
+    }
+
+
+    if (file_exists("usuarios.json")) {
+      $json = file_get_contents("usuarios.json");
+      $usuarios = json_decode($json , true);
+      foreach ($usuarios as $key => $usuario) {
+        if ($usuario["e-mail"] == $_SESSION["id"]) {
+          //Numero de posicion dentro del array de $usuarios
+          $_SESSION["indice"] = $key;
+
+          $usuarios[$key] = [
+          "nombre" => trim($_POST["nombre"]),
+          "e-mail" => trim($_POST["e-mail"]),
+          "password" => $usuario["password"],
+          "direccion1" => trim($_POST["dir1"]),
+          "direccion2" => trim($_POST["dir2"]),
+          "medioPago" => trim($_POST["dir2"])
+          ];
+
+          $_SESSION['id'] = $_POST["e-mail"];
+        }
+      }
+
+      $jsonFinal = json_encode($usuarios);
+      file_put_contents("usuarios.json", $jsonFinal);
+      header("Location: perfil.php");
+      exit;
+    }else {
+      $usuario = [
+        "nombre" => trim($_POST["nombre"]),
+        "e-mail" => trim($_POST["e-mail"]),
+        "password" => $usuario["password"],
+        "direccion1" => trim($_POST["dir1"]),
+        "direccion2" => trim($_POST["dir2"]),
+        "medioPago" => trim($_POST["dir2"])
+      ];
+      $_SESSION['id'] = $_POST["e-mail"];
+
+      $usuarioJson = json_encode($usuario);
+      file_put_contents("usuarios.json", $usuarioJson);
+      header("Location: perfil.php");
+      exit;
+    }
+  }
+  echo "llegue al fin del post";
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -7,13 +75,18 @@
     <?php require_once("codigoReutilizable/nav.php") ?>
     <div class="customer-form text-center">
       <div class="container">
+        <form class="" action="" method="post" enctype="multipart/form-data">
         <div class="py-5 text-center">
           <h2>Perfil de Usuario</h2>
         </div>
 
         <div class="container">
           <div class="col-12 text-center" >
-            <input type="image" src="img/messi-perfil.jpg" value="" class="img imagen-perfil">
+            <input type="image" src="<?=$_SESSION["foto"]; ?>" value="" class="img imagen-perfil">
+          </div>
+          <div class="">
+            <input type="file" name="foto" value="">
+            <?= imprimirErrores("foto", $errores)?>
           </div>
         </div>
               <div class="mb-3">
@@ -22,7 +95,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">@</span>
                   </div>
-                  <input type="text" class="form-control" id="username" placeholder="Username" required>
+                  <input type="text" class="form-control" id="username" placeholder="Username" name="nombre" value="<?=$usuarioActual["nombre"]; ?>" required>
                   <div class="invalid-feedback" style="width: 100%;">
                     Campo Obligatorio
                   </div>
@@ -31,7 +104,7 @@
 
               <div class="mb-3">
                 <label for="email">Email <span class="text-muted">(Campo Obligatorio)</span></label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <input type="email" class="form-control" id="email" placeholder="you@example.com" name="e-mail" value="<?=$usuarioActual["e-mail"]; ?>">
                 <div class="invalid-feedback">
                   Porfavor ingrese un email valido.
                 </div>
@@ -39,7 +112,9 @@
 
               <div class="mb-3">
                 <label for="address">Dirección</label>
-                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main St" name="dir1" value="<?php if (isset($usuarioActual["direccion1"])) {
+                  echo $usuarioActual["direccion1"];
+                } ?>" required>
                 <div class="invalid-feedback">
                   Porfavor ingrese su direccion actual.
                 </div>
@@ -47,7 +122,9 @@
 
               <div class="mb-3">
                 <label for="address2">Dirección 2 <span class="text-muted">(Opcional)</span></label>
-                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" name="dir2" value="<?php if (isset($usuarioActual["direccion2"])) {
+                  echo $usuarioActual["direccion2"];
+                } ?>">
               </div>
 
               <div class="row">

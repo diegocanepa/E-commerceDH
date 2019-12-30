@@ -2,7 +2,6 @@
 <?php
 require_once("./codigoReutilizable/funciones.php");
 iniciarSesion();
-verificarLogout();
 
 $errores = [];
 
@@ -14,6 +13,13 @@ if ($_POST) {
   if (count($errores) == 0) {
     $_SESSION['id'] = $_POST["e-mail"];
     $_SESSION['estado'] = 'Autenticado';
+    if (isset($_POST["recordame"])) {
+      setcookie("e-mail", $_POST["e-mail"], time() + 3600 * 24 * 7);
+      setcookie("password", $_POST["password"], time() + 3600 * 24 * 7);
+    }else {
+      setcookie("e-mail", null, time() - 1);
+      setcookie("password", null, time() - 1);
+    }
     header("Location: productos.php");
     exit;
   }
@@ -63,7 +69,7 @@ if ($_POST) {
                           <?= imprimirErrores("password", $errores)?>
                       </div>
                       <div class="">
-                        <input type="checkbox" name="recordame">
+                        <input type="checkbox" name="recordame" checked>
                         <label for="gridCheck">Recordame</label>
                     </div>
                       <div class="boton-send">
