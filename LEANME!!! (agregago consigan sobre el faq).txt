@@ -13,15 +13,3 @@
 --FAQ--
 
 estaria bueno hacer como en esta pagina https://www.tiendanube.com/preguntas-frecuentes
-
---Carrito de compras--
-
---Ventana login--
-
---Ventana perfil de usuario--
-
---Catalogo de productos--
-
---Detalle de productos--
-
---Preguntas frecuentes--
