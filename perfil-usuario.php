@@ -1,3 +1,11 @@
+<?php
+require_once("codigoReutilizable/funciones.php");
+iniciarSesion();
+
+$json = file_get_contents("usuarios.json");
+$usuarios = json_decode($json , true);
+$usuarioActual = $usuarios[$_SESSION["indice"]];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php require_once("codigoReutilizable/head.php") ?>
@@ -51,7 +59,7 @@
                                             Nombre
                                         </label>
                                         <div class="col-md-6">
-                                            <input class="form-control" name="firstname" type="text" value="Gaston" required="">
+                                            <input class="form-control" name="firstname" type="text" value="<?=$usuarioActual["nombre"]; ?>" required="">
                                         </div>
                                         <div class="col-md-6 text-muted">
                                         </div>
@@ -61,7 +69,7 @@
                                             Apellidos
                                         </label>
                                         <div class="col-md-6">
-                                            <input class="form-control" name="lastname" type="text" value="Favre Salas" required="">
+                                            <input class="form-control" name="lastname" type="text" value="" required="">
                                         </div>
                                         <div class="col-md-6 text-muted">
                                         </div>
@@ -71,7 +79,7 @@
                                             Dirección de correo electrónico
                                         </label>
                                         <div class="col-md-6">
-                                            <input class="form-control" name="email" type="email" value="gastonfavre@outlook.com" required="">
+                                            <input class="form-control" name="email" type="email" value="<?=$usuarioActual["e-mail"]; ?>" required="">
                                         </div>
                                         <div class="col-md-6 text-muted">
                                         </div>

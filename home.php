@@ -1,4 +1,8 @@
-<?php $usuarios = [
+<?php
+  require_once("codigoReutilizable/funciones.php");
+  iniciarSesion();
+  //unset($_SESSION["id"]);
+  $usuarios = [
   "usuario" => "admin",
   "password" => "admin"
   ]
@@ -57,7 +61,7 @@
     <!-- Servicios -->
 
     <section class="page-section-services" id="about-services">
-        <h2 id="h2-services">Nuestros servicios <?php echo($_SESSION["id-email"]); var_dump($_SESSION)?></h2>
+        <h2 id="h2-services">Nuestros servicios</h2>
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-4">

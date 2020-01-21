@@ -1,3 +1,7 @@
+<?php
+require_once("codigoReutilizable/funciones.php");
+iniciarSesion();
+ ?>
 <!DOCTYPE html>
 
 

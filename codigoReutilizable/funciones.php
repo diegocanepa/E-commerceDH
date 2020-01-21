@@ -92,6 +92,8 @@ function validarFormLogin(){
           foreach ($usuarios as $key => $usuario) {
               if ($usuario["e-mail"] == $_POST["e-mail"] && !password_verify($_POST["password"], $usuario["password"])) {
                 $arrayErrores["password"][] = "La contraseña ingresada es incorrecta.";
+              }else {
+                $_SESSION["indice"] = $key;
               }
           }
         }
@@ -101,9 +103,15 @@ function validarFormLogin(){
   return $arrayErrores;
 }
 
+function guardarCookie(){
+
+}
 
 //mantener datos
 function persistirDato($dato, $array){
+if (isset($_COOKIE[$dato])) {
+  return $_COOKIE[$dato];
+}else {
   if (isset($array[$dato])) {
     return "";
   }else {
@@ -114,6 +122,9 @@ function persistirDato($dato, $array){
     }
   }
 }
+
+
+} //<---- creo que esta de más la llave
 
 //Devolver errores
 function imprimirErrores($dato, $array){
@@ -126,7 +137,7 @@ function imprimirErrores($dato, $array){
   return $strErrores;
 }
 
-function inciarSesion()
+function iniciarSesion()
 {
   session_start();
 }
@@ -140,5 +151,39 @@ function usuarioRegistrado($usuarios){
     }
   }
   return false;
+}
+
+function validarFormEditPerfil(){
+  $arrayErrores = [];
+  if (isset($_POST["nombre"])) {
+    if (empty($_POST["nombre"])) {
+      $arrayErrores["e-mail"][] = "El campo nombre es obligatorio.";
+    }
+  }
+
+  if (isset($_POST["e-mail"])) {
+    if (empty($_POST["e-mail"])) {
+      $arrayErrores["e-mail"][] = "El campo email es obligatorio.";
+    }
+  }
+
+  if (isset($_POST["dir1"])) {
+    if (empty($_POST["dir1"])) {
+      $arrayErrores["e-mail"][] = "El campo direccion es obligatorio.";
+    }
+  }
+
+  //VAlidando el archivo
+  if (isset($_FILE["foto"])) {
+    if ($_FILES["foto"]["error"] != 0) {
+      $arrayErrores["foto"] = "Hubo un error al cargar la imagen";
+    }else {
+      $extension = pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION);
+      if ($extension != jpg) {
+        $arrayErrores["foto"] = "El formatode la iagen debe ser .jpg";
+      }
+    }
+  }
+  return $arrayErrores;
 }
  ?>

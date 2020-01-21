@@ -1,6 +1,12 @@
 
-<?php session_start();
+<?php
+require_once("codigoReutilizable/funciones.php");
+iniciarSesion();
+
+
+
   $total = 0;
+  $carro = [];
   if (isset($_SESSION["idProductos"])) {
     $carro = $_SESSION["idProductos"];
   }
@@ -8,8 +14,15 @@
   if ($_POST) {
     //inicio pagar
     if (isset($_POST["pagar"])) {
-        session_destroy();
+      if (!isset($_SESSION["id"])) {
+        header("Location: form-login.php");
+      }else {
+        unset($_SESSION["idProductos"]);
+        $carro = [];
+
         header('Location: exito.php');
+      }
+
     }
     //fin pagar - inicio agregar
     if (isset($_POST["agregar"])) {
@@ -18,7 +31,8 @@
 
     //fin agregar - inicio cancelar
     if($_POST["cancelar"]){
-        session_destroy();
+        unset($_SESSION["idProductos"]);
+        $carro = [];
         header('Location: home.php');
     }
   }
@@ -37,7 +51,7 @@
             <h1>Productos del carro</h1>
         </div>
         <form class="formulario" action="carrito.php" method="post">
-          <?php if (isset($carro)):?>
+          <?php if (isset($carro) && count($carro) != 0):?>
             <?php if(strlen($carro[0]) != 0):?>
               <table class="egt" style="width:100%">
                 <thead>

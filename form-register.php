@@ -1,6 +1,6 @@
 <?php
 require_once("./codigoReutilizable/funciones.php");
-
+iniciarSesion();
 
 $errores = [];
 
@@ -18,6 +18,7 @@ if ($_POST) {
       $json = file_get_contents("usuarios.json");
       $usuarios = json_decode($json , true);
       //var_dump($usuarios);
+
       //primero guardo los datos del usuario
       $usuarios[] = [
         "nombre" => trim($_POST["nombre"]),
